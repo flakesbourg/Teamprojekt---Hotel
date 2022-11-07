@@ -10,6 +10,8 @@
    inkscape:export-filename="logo_1.svg"
    inkscape:export-xdpi="101.42145"
    inkscape:export-ydpi="101.42145"
+   sodipodi:docname="logo_2.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +26,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     showgrid="false" />
+     showgrid="false"
+     inkscape:zoom="1.720229"
+     inkscape:cx="353.15067"
+     inkscape:cy="69.467497"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
   <defs
      id="defs2">
     <linearGradient
@@ -59,15 +70,15 @@
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-38.462512,64.77897)"
        id="text111"
-       style="font-size:192px;white-space:pre;shape-inside:url(#rect113);shape-padding:5.46504;fill:#006e90;fill-opacity:1"><tspan
+       style="font-size:192px;white-space:pre;shape-inside:url(#rect113);shape-padding:5.46504;fill:#ff3333;fill-opacity:1;stroke:#000000;stroke-opacity:1"><tspan
          x="151.92773"
          y="428.74555"
-         id="tspan3875"><tspan
+         id="tspan1599"><tspan
            style="font-family:'Freestyle Script';-inkscape-font-specification:'Freestyle Script'"
-           id="tspan3873">Grandline Hotel</tspan></tspan></text>
+           id="tspan1597">Grandline Hotel</tspan></tspan></text>
     <path
        sodipodi:type="star"
-       style="fill:#006e90;fill-opacity:1;stroke-width:0.264583"
+       style="fill:#ffd300;fill-opacity:1;stroke-width:0.264583;stroke:#000000;stroke-opacity:1"
        id="path2067"
        inkscape:flatsided="false"
        sodipodi:sides="5"
@@ -85,7 +96,7 @@
        transform="translate(13.013632,161.07984)" />
     <path
        sodipodi:type="star"
-       style="display:inline;fill:#006e90;fill-opacity:1;stroke-width:0.264583"
+       style="display:inline;fill:#ffd300;fill-opacity:1;stroke-width:0.264583;stroke:#000000;stroke-opacity:1"
        id="path2067-0"
        inkscape:flatsided="false"
        sodipodi:sides="5"
@@ -103,7 +114,7 @@
        transform="translate(40.192619,161.19624)" />
     <path
        sodipodi:type="star"
-       style="display:inline;fill:#006e90;fill-opacity:1;stroke-width:0.264583"
+       style="display:inline;fill:#ffd300;fill-opacity:1;stroke-width:0.264583;stroke:#000000;stroke-opacity:1"
        id="path2067-2"
        inkscape:flatsided="false"
        sodipodi:sides="5"
@@ -121,7 +132,7 @@
        transform="translate(68.82261,161.19624)" />
     <path
        sodipodi:type="star"
-       style="display:inline;fill:#006e90;fill-opacity:1;stroke-width:0.264583"
+       style="display:inline;fill:#ffd300;fill-opacity:1;stroke-width:0.264583;stroke:#000000;stroke-opacity:1"
        id="path2067-7"
        inkscape:flatsided="false"
        sodipodi:sides="5"
@@ -138,14 +149,14 @@
        inkscape:transform-center-y="-0.98397315"
        transform="translate(98.030984,161.48544)" />
     <rect
-       style="fill:#006e90;fill-opacity:1;stroke-width:0.244843"
+       style="fill:#ff3333;fill-opacity:1;stroke-width:0.244843;stroke:#000000;stroke-opacity:1"
        id="rect2932"
        width="44.824734"
        height="3.1811101"
        x="4.3378782"
        y="193.75851" />
     <rect
-       style="display:inline;fill:#006e90;fill-opacity:1;stroke-width:0.244843"
+       style="display:inline;fill:#ff3333;fill-opacity:1;stroke-width:0.244843;stroke:#000000;stroke-opacity:1"
        id="rect2932-1"
        width="44.824734"
        height="3.1811101"
