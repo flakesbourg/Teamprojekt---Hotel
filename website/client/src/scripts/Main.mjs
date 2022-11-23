@@ -1,1 +1,4 @@
-console.log('kek');
+import { moveMenu, burgerMenu } from './Header.mjs';
+
+moveMenu();
+burgerMenu();

@@ -1,16 +1,51 @@
 @import "variables.less";
 
+//Hero Image
+.heroImage(){
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.heroImageMask{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: linear-gradient(to top, @background-color-primary 1%, transparent 20%);
+}
+
+.heroImageHomepage{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/heroImages/homePageHeroImage.jpg");
+    .heroImage;
+
+    #logo{
+        transform: translate(-50%, -50%);
+        width: 50%;
+        top: 50%;
+        position: absolute;
+        left: 50%;
+    }
+}
+
+//menu
 nav{
     width: 100%;
     height: 60px;
-    background-color: @background-color-secondary;
+    top: 80%;
+    position: absolute;
     display: flex;
     justify-content: space-around;
-    overflow: hidden;
+
+    &.sticky{
+        top: 0%;
+        position: fixed;
+    }
 }
 
 #menu{
-    display: flex;
+    display: none;
     width: 50%;
     justify-content: space-around;
     color: white;
@@ -18,7 +53,7 @@ nav{
 }
 
 .menuLogo{
-    height: 80%;
+    height: 40%;
     margin: auto 0;
 }
 
@@ -26,6 +61,46 @@ nav{
     height: fit-content;
     margin: auto;
     overflow: hidden;
+
+    .dropdown-button{
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .dropdown-content{
+        display: none;
+        position: absolute;
+        background-color: @background-color-secondary;
+        border-radius: 5px;
+        box-shadow: 0px 15px 30px 5px rgba(0,0,0,0.5);
+        padding-top: 10px;
+        z-index: 1;
+
+        a{
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+
+            &:hover{
+                background-color: @highlight-color-primary;
+                color: black;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    &:hover .dropdown-button{
+        background-color: @highlight-color-primary;
+        color: black;
+    }
+
+    &:hover .dropdown-content{
+        display: block;
+    }
 }
 
 .bookingButton{
@@ -38,19 +113,149 @@ nav{
     margin: auto 0px;
 }
 
-.dropdown-button{
+//burgerMenu
 
+#burgerIcon{
+    fill: white;
+    margin: auto 0;
+
+    &:hover{
+        fill: @highlight-color-primary;
+    }
 }
 
-.dropdown-content{
-    display: none;
-    position: absolute;
+#burgerMenu{
+    position: fixed;
+    right: -60%;
+    top: 0%;
+    width: 60%;
+    height: 100%;
+    z-index: 150;
+
+    background-color: #121212;
+    transition: right 200ms ease-in-out;
+
+    &.open{
+        right: 0%;
+    }
+
+    & ul{
+        width: 100%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: white;
+        list-style: none;
+    }
+
+    & ul li{
+        margin: 0 auto;
+    }
 }
 
-.menuItem:hover .dropdown-content{
-    display: block;
+#closeIcon{
+    fill: white;
+    width: auto;
+    height: 10%;
+
+    &:hover{
+        fill: @highlight-color-primary;
+    }
 }
 
-.dropdown-content a{
-    display: block;
+//Booking
+
+#bookingInput{
+    width: 100%;
+    padding: 15px 0 15px 0;
+    background-color: @highlight-color-primary;
+    border-radius: 0 0 @border-radius @border-radius;
+
+    .inputField{
+        background-color: white;
+        border-radius: @border-radius;
+        width: 50%;
+        padding: 5px;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        svg{
+            margin: auto;
+        }
+
+        div{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+
+            #arrival{
+                width: 80%;
+                border-radius: 4px;
+            }
+
+            #departure{
+                width: 80%;
+                border-radius: 4px;
+            }
+
+            #rooms{
+                width: 80%;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    #submitButton{
+        width: 30%;
+        margin: auto;
+        border-radius: @border-radius;
+        border-style: none;
+        background-color: @background-color-secondary;
+        color: white;
+    }
+}
+
+
+//other screnns
+@media only screen and (min-width: 480px) {
+    
+}
+
+@media only screen and (min-width: 900px) {
+    .heroImageHomepage{
+        #logo{
+            width: 35%;
+        }
+    }
+
+    //menu
+    #menu{
+        display: flex;
+    }
+
+    .menuLogo{
+        height: 80%;
+    }
+
+    //burgerMenu
+    #burgerIcon{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1260px) {
+    .heroImageHomepage{
+        #logo{
+            width: 20%;
+        }
+    }
 }
