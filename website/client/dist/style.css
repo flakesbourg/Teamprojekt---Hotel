@@ -1,0 +1,278 @@
+.heroImageMask {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: linear-gradient(to top, #252526 1%, transparent 20%);
+}
+.heroImageHomepage {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/heroImages/homePageHeroImage.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.heroImageHomepage #logo {
+  transform: translate(-50%, -50%);
+  width: 50%;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+}
+nav {
+  z-index: 100;
+  width: 100%;
+  height: 60px;
+  top: 80%;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+}
+nav.sticky {
+  top: 0%;
+  position: fixed;
+}
+#menu {
+  display: none;
+  width: 50%;
+  justify-content: space-around;
+  color: white;
+  list-style: none;
+}
+.menuLogo {
+  height: 40%;
+  margin: auto 0;
+}
+.menuItem {
+  height: fit-content;
+  margin: auto;
+  overflow: hidden;
+}
+.menuItem .dropdown-button {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.menuItem .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2d2d30;
+  border-radius: 5px;
+  box-shadow: 0px 15px 30px 5px rgba(0, 0, 0, 0.5);
+  padding-top: 10px;
+  z-index: 1;
+}
+.menuItem .dropdown-content a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+.menuItem .dropdown-content a:hover {
+  background-color: #ff7b7a;
+  color: black;
+  border-radius: 5px;
+}
+.menuItem:hover .dropdown-button {
+  background-color: #ff7b7a;
+  color: black;
+}
+.menuItem:hover .dropdown-content {
+  display: block;
+}
+.bookingButton {
+  background-color: #ff7b7a;
+  color: black;
+  border: none;
+  border-radius: 35px;
+  height: 30px;
+  padding: 0 50px;
+  margin: auto 0px;
+}
+#burgerIcon {
+  fill: white;
+  margin: auto 0;
+}
+#burgerIcon:hover {
+  fill: #ff7b7a;
+}
+#burgerMenu {
+  position: fixed;
+  right: -60%;
+  top: 0%;
+  width: 60%;
+  height: 100%;
+  z-index: 150;
+  background-color: #121212;
+  transition: right 200ms ease-in-out;
+}
+#burgerMenu.open {
+  right: 0%;
+}
+#burgerMenu ul {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  list-style: none;
+}
+#burgerMenu ul li {
+  margin: 0 auto;
+}
+#closeIcon {
+  fill: white;
+  width: auto;
+  height: 10%;
+}
+#closeIcon:hover {
+  fill: #ff7b7a;
+}
+#bookingInput {
+  width: 100%;
+  padding: 15px 0 15px 0;
+  background-color: #ff7b7a;
+  border-radius: 0 0 35px 35px;
+  position: fixed;
+  transition: top 200ms ease-in-out;
+}
+#bookingInput .inputField {
+  background-color: white;
+  border-radius: 35px;
+  width: 50%;
+  padding: 5px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#bookingInput .inputField svg {
+  margin: auto;
+}
+#bookingInput .inputField div {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+#bookingInput .inputField div #arrival {
+  width: 80%;
+  border-radius: 4px;
+}
+#bookingInput .inputField div #departure {
+  width: 80%;
+  border-radius: 4px;
+}
+#bookingInput .inputField div #rooms {
+  width: 80%;
+  border-radius: 4px;
+}
+#bookingInput #submitButton {
+  display: block;
+  width: 30%;
+  margin: auto;
+  border-radius: 35px;
+  border-style: none;
+  background-color: #2d2d30;
+  color: white;
+  font-size: larger;
+  padding: 10px 0;
+}
+@media only screen and (min-width: 900px) {
+  .heroImageHomepage #logo {
+    width: 35%;
+  }
+  #menu {
+    display: flex;
+  }
+  .menuLogo {
+    height: 80%;
+  }
+  #burgerIcon {
+    display: none;
+  }
+  #bookingInput {
+    display: flex;
+    justify-content: center;
+  }
+  #bookingInput .inputField {
+    width: 20%;
+    margin: 20px;
+  }
+  #bookingInput #submitButton {
+    width: 15%;
+    margin: auto 0;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  .heroImageHomepage #logo {
+    width: 20%;
+  }
+}
+#footerLogo {
+  display: none;
+}
+#footerLogo2 {
+  width: 75%;
+  margin: 12%;
+}
+.footerContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 15px;
+  margin-left: 10%;
+}
+.footerContainer b {
+  background-color: #ff7b7a;
+  border-radius: 5px;
+  padding: 5px;
+}
+.footerContainer2 {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 15px;
+  margin: 15% 0% 0 5%;
+}
+@media only screen and (min-width: 900px) {
+  .footerContainer {
+    grid-template-columns: auto auto auto auto auto;
+    margin: 10% 5% 0 5%;
+  }
+  #footerLogo {
+    display: block;
+    width: 20%;
+    margin: 0 5% 0 5%;
+    float: left;
+  }
+  #footerLogo2 {
+    display: none;
+  }
+  .footerContainer2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 15% 20% 0 20%;
+  }
+}
+@media only screen and (min-width: 1260px) {
+  #footerLogo {
+    display: block;
+    width: 10%;
+    margin: 0 5% 0 5%;
+    float: left;
+  }
+  .footerContainer2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 10% 30% 0 30%;
+  }
+}
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #252526;
+}
