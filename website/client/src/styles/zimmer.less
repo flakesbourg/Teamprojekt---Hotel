@@ -1,0 +1,140 @@
+@import "variables.less";
+
+.zimmerBasic,
+.zimmerFamily,
+.zimmerPremium {
+
+	display: grid;
+	grid-template-columns: auto auto auto;
+	row-gap: 20px;
+	column-gap: 70px;
+	width: 60%;
+	text-align: center;
+	margin-top: 20px;
+	background-color: @background-color-secondary;
+	border-radius: 35px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	color: white;
+
+
+	.zimmerBasicText,
+	.zimmerFamilyText,
+	.zimmerPremiumText {
+		text-align: center;
+		grid-column: 1 / span 3;
+		color: white;
+		text-decoration: underline;
+		text-underline-offset: 15px;
+
+	}
+
+	.zimmerImage {
+		float: right;
+		width: 100%;
+		border-radius: 20px;
+		grid-column: 1/ span 3;
+		grid-row: 2;
+
+	}
+
+	#zimmerBasicList,
+	#zimmerFamilyList,
+	#zimmerPremiumList {
+		width: 100%;
+		text-align: center;
+		list-style-type: none;
+		padding: 0;
+		grid-column: 1 / span 3;
+		color: white;
+
+
+	}
+
+	.zimmerBasicButton,
+	.zimmerFamilyButton,
+	.zimmerPremiumButton {
+		grid-column: 1 / span 3;
+		margin: auto;
+		margin-top: 30px;
+		color: black;
+
+	}
+}
+
+// .zimmerFamily {
+// 	border-radius: 35px;
+// 	background-color: @background-color-secondary;
+// 	display: grid;
+// 	grid-template-columns: 1fr;
+// 	align-items: center;
+// 	padding: 10px;
+// }
+
+
+
+@media only screen and (min-width: 900px) {
+
+	.zimmerBasic,
+	.zimmerFamily,
+	.zimmerPremium {
+		display: grid;
+		grid-template-columns: auto auto auto auto auto auto;
+		row-gap: 20px;
+		column-gap: 70px;
+		width: 60%;
+		text-align: center;
+		margin-top: 20px;
+		background-color: @background-color-secondary;
+		border-radius: 35px;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding: 20px;
+
+
+		.zimmerBasicText,
+		.zimmerFamilyText,
+		.zimmerPremiumText {
+			grid-column: 1 / span 6;
+			color: white;
+			line-height: 1.6;
+			text-decoration: underline;
+			text-underline-offset: 15px;
+		}
+
+		.zimmerImage {
+			width: 80%;
+			height: 80%;
+			grid-column: 4 / span 3;
+			border-radius: 35px;
+			margin: auto;
+
+		}
+
+		#zimmerBasicList,
+		#zimmerFamilyList,
+		#zimmerPremiumList {
+			color: white;
+			padding-left: 20px;
+			list-style-type: none;
+			line-height: 1.6;
+			margin: auto;
+			grid-column: 1 / span 3;
+
+		}
+
+
+		.zimmerBasicButton,
+		.zimmerFamilyButton,
+		.zimmerPremiumButton {
+			color: black;
+			grid-column: 1 / span 6;
+			margin: auto;
+			margin-top: 30px;
+		}
+	}
+
+}
