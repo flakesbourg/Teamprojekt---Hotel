@@ -1,6 +1,6 @@
 export function moveMenu () {
   window.addEventListener('scroll', onScroll);
-  window.addEventListener('scroll', onResize);
+  window.addEventListener('resize', onResize);
 
   const header = document.getElementById('navbar');
   let sticky = header.offsetTop;
