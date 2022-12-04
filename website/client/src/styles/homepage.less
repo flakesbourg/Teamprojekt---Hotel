@@ -1,0 +1,131 @@
+@import "variables.less";
+
+.card1{
+    display: flex;
+    flex-direction: column;
+    border-radius: @border-radius;
+    background-color: @background-color-secondary;
+    width: 80%;
+    padding: 20px;
+    padding-top: 0;
+    margin: 50px auto;
+    align-items: center;
+
+    .cardImage{
+        border-radius: @border-radius;
+        width: 90%;
+        object-fit: cover;
+        object-position: top center;
+    }
+
+    .cardText{
+        color: white;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        white-space: nowrap;
+
+        h1{
+            flex-wrap: nowrap;
+        }
+
+        .cardUnderline{
+            height: 5px;
+            width: 50%;
+            background-color: white;
+        }
+    }
+}
+
+.cardReverse{
+    padding-top: 20px;
+    flex-direction: column-reverse;
+}
+
+#map{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border-radius: @border-radius;
+    background-color: @background-color-secondary;
+    color: white;
+    padding: 20px;
+    margin: 50px auto;
+
+    .cardText{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto auto 20px auto;
+
+        .cardUnderline{
+            height: 5px;
+            width: 50%;
+            background-color: white;
+        }
+    }
+
+    iframe{
+        width: 90%;
+        height: 250px;
+        border-radius: @border-radius;
+        margin: auto;
+    }
+    
+    p{
+        width: 90%;
+
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    .card1{
+        .cardImage{
+            width: 70%;
+        }
+    }
+
+    #map{
+        iframe{
+            height: 325px;
+        }
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .card1{
+        flex-direction: row;
+        width: 60%;
+        justify-content: space-evenly;
+
+        .cardImage{
+            width: 45%;
+        }
+
+        .cardText{
+            width: 45%;
+        }
+    }
+
+    .cardReverse{
+        flex-direction: row;
+    }
+
+    #map{
+        width: 60%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        iframe{
+            width: 45%;
+            height: 400px;
+        }
+
+        p{
+            width: 45%;
+        }
+    }
+}
