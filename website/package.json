@@ -5,8 +5,8 @@
   "main": "",
   "scripts": {
     "js": "esbuild .\\client\\src\\scripts\\Main.mjs --bundle --outfile=.\\client\\dist\\bundle.js",
-    "clear": "rmdir /s/q .\\client\\dist\\ && rmdir /s/q .\\node_modules",
-    "rmDist": "rmdir /s/q .\\client\\dist\\ && mkdir .\\client\\dist",
+    "clear": "rmdir /s /q .\\client\\dist\\ && rmdir /s/q .\\node_modules",
+    "rmDist": "rmdir /s /q .\\client\\dist\\ && mkdir .\\client\\dist",
     "lint": "semistandard .\\client\\src\\scripts\\*.mjs",
     "format": "semistandard --fix .\\client\\src\\scripts\\*.mjs",
     "html": "mkdir .\\client\\dist\\templates && xcopy .\\client\\src\\templates .\\client\\dist\\templates /E/H",
@@ -20,7 +20,7 @@
     "play": "npm install && npm run debug && npm start"
   },
   "author": "",
-  "license": "ISC",
+  "license": "",
   "devDependencies": {
     "esbuild": "^0.15.14",
     "less": "^4.1.3",
