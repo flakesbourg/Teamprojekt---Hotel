@@ -28,10 +28,14 @@ $('header').load('header.html #header', function () {
       $('#logo').replaceWith('<h1 id="headline">Premium</h1>');
       document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImagePremium');
       break;
+    case 'Aktivitäten':
+      $('#logo').replaceWith('<h1 id="headline">Aktivitäten</h1>');
+      document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageActivities');
+      break;
   }
 });
 $('footer').load('footer.html #footer');
 
-if (document.title === 'Grandline Hotel') {
+if (document.title === 'Grandline Hotel' || document.title === 'Aktivitäten') {
   cardImage();
 }
