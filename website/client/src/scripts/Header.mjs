@@ -26,10 +26,13 @@ export function moveMenu () {
   function changeOpacity () {
     if (window.pageYOffset < sticky) {
       header.style.background = 'none';
+      header.style.boxShadow = 'none';
     } else if (window.pageYOffset > sticky && window.pageYOffset <= window.innerHeight) {
       header.style.background = 'rgba(45, 45, 48,' + ((window.pageYOffset - sticky) / (window.innerHeight - sticky)) + ')';
+      header.style.boxShadow = 'none';
     } else {
       header.style.background = 'rgba(45, 45, 48, 1)';
+      header.style.boxShadow = '0px 5px 15px black';
     }
   }
 }
