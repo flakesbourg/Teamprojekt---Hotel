@@ -27,6 +27,7 @@
 
         h1{
             white-space: nowrap;
+            font-size: 1.3rem;
         }
 
         .cardUnderline{
@@ -65,6 +66,11 @@
             width: 50%;
             background-color: white;
         }
+
+        h1{
+            white-space: nowrap;
+            font-size: 1.3rem;
+        }
     }
 
     iframe{
@@ -77,6 +83,25 @@
     p{
         width: 90%;
 
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    .card1{
+        .cardText{
+            h1{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    #map{
+        .cardText{
+            h1{
+                white-space: nowrap;
+                font-size: 2rem;
+            }
+        }
     }
 }
 
@@ -106,6 +131,9 @@
 
         .cardText{
             width: 45%;
+            h1{
+                font-size: 1.7rem;
+            }
         }
     }
 
@@ -125,6 +153,16 @@
 
         p{
             width: 45%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .card1{
+        .cardText{
+            h1{
+                font-size: 1.9rem;
+            }
         }
     }
 }
