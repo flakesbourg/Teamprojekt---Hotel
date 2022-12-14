@@ -1,158 +1,23 @@
 @import "variables.less";
 
-
-// .aktivitätenText {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	color: white;
-// 	width: 80%;
-// 	margin: auto;
-// 	margin-top: 20px;
-// 	padding: 0 10px;
-// 	background-color: @background-color-secondary;
-// 	border-radius: @border-radius;
-// 	text-align: center;
-
-// 	.aktivitätenHeadline {
-// 		text-decoration: underline;
-// 		text-underline-offset: 15px;
-// 		margin: auto;
-// 		margin-top: 20px;
-// 		margin-bottom: 10%;
-// 	}
-// }
-
-.aktivitätenContent1,
-.aktivitätenContent2 {
-	display: flex;
-	flex-direction: column;
+#castleImage,
+#wandernImage{
 	border-radius: @border-radius;
-	background-color: @background-color-secondary;
-	width: 80%;
-	padding: 20px;
-	padding-top: 0;
-	margin: 50px auto;
-	align-items: center;
-
-	#wandernImage,
-	#castleImage {
-		border-radius: @border-radius;
-		width: 90%;
-		object-fit: cover;
-		object-position: top center;
-
-	}
-
-	.wandernHeadline,
-	.castleHeadline {
-		color: white;
-		width: 90%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		white-space: nowrap;
-
-		h1 {
-			flex-wrap: nowrap;
-		}
-
-		.cardUnderline {
-			height: 5px;
-			width: 50%;
-			background-color: white;
-		}
-
-	}
-
+	width: 50%;
+	object-fit: cover;
+	object-position: top center;
 }
 
-
-.cardReverse {
-	padding-top: 20px;
-	flex-direction: column-reverse;
-}
-p{
-	width: 90%;
-
+@media only screen and (min-width: 450px) {
+    #castleImage,
+    #wandernImage{
+        width: 40%;
+    }
 }
 
-@media only screen and (min-width: 900px) {
-	.aktivitätenText {
-		display: flex;
-		flex-wrap: wrap;
-		color: white;
-		width: 80%;
-		margin: auto;
-		margin-top: 20px;
-		padding: 0 10px;
-		background-color: @background-color-secondary;
-		border-radius: @border-radius;
-		text-align: center;
-
-		.aktivitätenHeadline {
-			width: 45%;
-
-		}
-	}
-
-	.aktivitätenContent1 {
-		flex-direction: row;
-		width: 60%;
-		justify-content: space-evenly;
-
-
-
-		.wandernHeadline {
-			width: 45%;
-		}
-
-
-
-		#wandernImage {
-			width: 45%;
-
-		}
-	}
-
-	.cardReverse {
-		flex-direction: row;
-	}
-	p{
-		width: 45%;
-	}
-
-	// .aktivitätenContent2 {
-	// 	display: flex;
-	// 	flex-direction: row;
-	// 	width: 80%;
-	// 	margin: auto;
-	// 	column-gap: 5%;
-	// 	.aktivitätCastle {
-	// 		width: 50%;
-	// 		margin: auto;
-	// 		order: 1;
-	// 		text-align: center;
-	// 		background-color: @background-color-secondary;
-	// 		border-radius: @border-radius;
-	// 		padding: 5% 5%;
-	// 		color: white;
-	// 		.castleHeadline{
-	// 			margin-bottom: 10%;
-	// 			text-decoration: underline;
-	// 			text-underline-offset: 15px ;
-	// 			font-size: 100%;
-	// 		}
-	// 	}
-	// 	#castleImage {
-	// 		order: 2;
-	// 		width: 30%;
-	// 		margin: auto;
-	// 		margin-top: 20px;
-	// 		margin-bottom: 10px;
-	// 		border-radius: @border-radius;
-
-	// 	}
-	// }
-
-
+@media only screen and (min-width: 900px){
+	#castleImage,
+    #wandernImage{
+        width: 40%;
+    }
 }

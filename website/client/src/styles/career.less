@@ -1,0 +1,154 @@
+@import "variables.less";
+
+.bewerbung{
+    width: 90%;
+    border-radius: @border-radius;
+    background-color: @background-color-secondary;
+    color: white;
+    margin: 50px auto;
+
+    h1{
+        text-align: center;
+        padding-top: 20px;
+        white-space: nowrap;
+        font-size: 1.2rem;
+    }
+
+    .underline{
+        height: 5px;
+        width: 30%;
+        background-color: white;
+        margin: auto;
+    }
+
+    p{
+        width: 90%;
+        color: white;
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        padding-bottom: 20px;
+
+        label{
+            margin-top: 15px;
+        }
+
+        input{
+            border-radius: 15px;
+        }
+        
+        input #file-upload-button{
+            border-radius: 15px;
+            padding: 10px;
+        }
+
+        textarea{
+            height: 60px;
+            border-radius: 15px;
+            padding: 10px;
+        }
+
+        #submitButton{
+            width: 35%;
+            background-color: @highlight-color-primary;
+            margin: 15px auto;
+            border-style: none;
+            height: 30px;
+            font-size: 1.2rem;
+
+            &:hover, &:active{
+                background-color: @highlight-color-secondary;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .group{
+        display: flex;
+        flex-direction: column;
+
+        .groupForm{
+            display: flex;
+            flex-direction: column;
+            
+            input{
+                border-radius: 15px;
+                padding: 10px;
+            }
+
+            select{
+                border-radius: 15px;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 450px){
+    .bewerbung{
+        h1{
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .bewerbung{
+        width: 80%;
+
+        h1{
+            font-size: 2rem;
+        }
+
+        form,
+        p{
+            width: 60%;
+        }
+    }
+}
+
+@media only screen and (min-width: 900px){
+    .bewerbung{
+        width: 60%;
+
+        form,
+        p{
+            width: 80%;
+        }
+
+        .group{
+            flex-direction: row;
+            justify-content: space-between;
+    
+            .groupForm{
+                margin-top: 0;
+
+                &.third{
+                    width: 35%;
+                }
+
+                &.half{
+                    width: 45%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px){
+
+    .bewerbung{
+
+        form,
+        p{
+            width: 60%;
+        }
+    }
+}

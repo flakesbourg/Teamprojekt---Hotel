@@ -36,6 +36,14 @@ $('header').load('header.html #header', function () {
       $('#logo').replaceWith('<h1 id="headline">Tagen und Feiern</h1>');
       document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageHalls');
       break;
+    case 'Kontakt':
+      $('#logo').replaceWith('<h1 id="headline">Kontakt</h1>');
+      document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageContact');
+      break;
+    case 'Karriere':
+      $('#logo').replaceWith('<h1 id="headline">Karriere</h1>');
+      document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageCareer');
+      break;
   }
 });
 $('footer').load('footer.html #footer');
