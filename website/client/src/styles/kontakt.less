@@ -1,5 +1,4 @@
 @import "variables.less";
-
 .kontakt {
 	display: grid;
 	gap: 10px;
@@ -10,7 +9,6 @@
 	background-color: @background-color-secondary;
 	border-radius: @border-radius;
 	color: white;
-
 	input[type=text],
 	[type=email],
 	select,
@@ -22,7 +20,6 @@
 		margin-bottom: 16px;
 		border-radius: 15px;
 	}
-
 	input[type=submit] {
 		background-color: @highlight-color-secondary;
 		color: white;
@@ -31,11 +28,9 @@
 		cursor: pointer;
 		border-radius: 15px;
 	}
-
 	.kontaktInfo {
 		grid-column: 1;
 		grid-row: 1 / span 3;
-
 		.kontaktP {
 			width: 90%;
 		}
@@ -45,12 +40,9 @@
 			width: 90%;
 		}
 
-
 	}
 }
-
 @media only screen and (min-width: 900px) {
-
 	.kontakt {
 		display: grid;
 		column-gap: 40px;
@@ -62,37 +54,29 @@
 		background-color: @background-color-secondary;
 		border-radius: @border-radius;
 		color: white;
-
 		.kontaktContainer {
 			grid-column: 1 / span 2;
 			grid-row: 1 / span 3;
-
 			input[type=text],
 			[type=email],
 			select,
 			textarea {
 				width: 100%;
 			}
-
 		}
-
 		.kontaktInfo {
 			grid-column: 3;
 			grid-row: 1 / span 1;
-
 			.kontaktP {
 				width: 90%;
 			}
 		}
-
 		.kontaktDaten {
 			grid-column: 3;
 			grid-row: 2 / span 2;
-
 			.kontaktP {
 				width: 90%;
 			}
-
 		}
 	}
 }
