@@ -1,4 +1,4 @@
-import { moveMenu, burgerMenu, bookingInput } from './Header.mjs';
+import { moveMenu, burgerMenu, bookingInput, bookingForm } from './Header.mjs';
 import { cardImage } from './Homepage.mjs';
 import $ from 'jquery';
 
@@ -6,6 +6,7 @@ $('header').load('header.html #header', function () {
   moveMenu();
   burgerMenu();
   bookingInput();
+  bookingForm();
   window.scrollTo({
     top: 0
   });
@@ -35,6 +36,14 @@ $('header').load('header.html #header', function () {
     case 'Tagen und Feiern':
       $('#logo').replaceWith('<h1 id="headline">Tagen und Feiern</h1>');
       document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageHalls');
+      break;
+    case 'Kontakt':
+      $('#logo').replaceWith('<h1 id="headline">Kontakt</h1>');
+      document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageContact');
+      break;
+    case 'Karriere':
+      $('#logo').replaceWith('<h1 id="headline">Karriere</h1>');
+      document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageCareer');
       break;
   }
 });

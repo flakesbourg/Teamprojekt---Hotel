@@ -7,8 +7,8 @@
     "js": "esbuild .\\client\\src\\scripts\\Main.mjs --bundle --outfile=.\\client\\dist\\bundle.js",
     "clear": "rmdir /s /q .\\client\\dist\\ && rmdir /s/q .\\node_modules",
     "rmDist": "rmdir /s /q .\\client\\dist\\ && mkdir .\\client\\dist",
-    "lint": "semistandard .\\client\\src\\scripts\\*.mjs",
-    "format": "semistandard --fix .\\client\\src\\scripts\\*.mjs",
+    "lint": "semistandard server.mjs server\\src\\*.mjs .\\client\\src\\scripts\\*.mjs",
+    "format": "semistandard --fix server.mjs server\\src\\*.mjs .\\client\\src\\scripts\\*.mjs",
     "html": "mkdir .\\client\\dist\\templates && xcopy .\\client\\src\\templates .\\client\\dist\\templates /E/H",
     "css": "lessc .\\client\\src\\styles\\style.less .\\client\\dist\\style.css",
     "assets": "mkdir .\\client\\dist\\assets && xcopy .\\client\\src\\assets .\\client\\dist\\assets /E/H",
@@ -16,7 +16,7 @@
     "minify:js": "terser .\\client\\dist\\bundle.js --compress --mangle --comment=false -o .\\client\\dist\\bundle.js",
     "debug": "npm run rmDist && npm run lint && npm run js && npm run css && npm run html && npm run assets",
     "build": "npm run lint && npm run js && npm run html && npm run assets && npm run minify:css && npm run minify:js",
-    "start": "http-server .\\client\\dist\\templates",
+    "start": "node server.mjs 8080",
     "play": "npm install && npm run debug && npm start"
   },
   "author": "",
@@ -29,7 +29,9 @@
     "terser": "^5.15.1"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "http-server": "^14.1.1",
-    "jquery": "^3.6.1"
+    "jquery": "^3.6.1",
+    "mongodb": "^4.12.1"
   }
 }

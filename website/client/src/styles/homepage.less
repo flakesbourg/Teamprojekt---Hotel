@@ -1,13 +1,13 @@
 @import "variables.less";
 
-.card1{
+.card1,
+.card2{
     display: flex;
     flex-direction: column;
     border-radius: @border-radius;
     background-color: @background-color-secondary;
     width: 80%;
     padding: 20px;
-    padding-top: 0;
     margin: 50px auto;
     align-items: center;
 
@@ -15,7 +15,7 @@
         border-radius: @border-radius;
         width: 90%;
         object-fit: cover;
-        object-position: top center;
+        object-position: center;
     }
 
     .cardText{
@@ -28,6 +28,11 @@
         h1{
             white-space: nowrap;
             font-size: 1.3rem;
+            text-align: justify;
+        }
+
+        p{
+            text-align: justify;
         }
 
         .cardUnderline{
@@ -39,7 +44,6 @@
 }
 
 .cardReverse{
-    padding-top: 20px;
     flex-direction: column-reverse;
 }
 
@@ -82,15 +86,16 @@
     
     p{
         width: 90%;
-
+        text-align: justify;
     }
 }
 
 @media only screen and (min-width: 450px) {
-    .card1{
+    .card1, 
+    .card2{
         .cardText{
             h1{
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
     }
@@ -106,7 +111,14 @@
 }
 
 @media only screen and (min-width: 650px) {
-    .card1{
+    .card1, 
+    .card2{
+        .cardText{
+            h1{
+                font-size: 2rem;
+            }
+        }
+
         .cardImage{
             width: 70%;
         }
@@ -137,6 +149,16 @@
         }
     }
 
+    .card2{
+        width: 60%;
+        .cardText{
+            width: 70%;
+            h1{
+                font-size: 1.7rem;
+            }
+        }
+    }
+
     .cardReverse{
         flex-direction: row;
     }
@@ -153,6 +175,7 @@
 
         p{
             width: 45%;
+
         }
     }
 }

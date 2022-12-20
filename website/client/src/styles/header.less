@@ -38,6 +38,30 @@
     }
 }
 
+#arrowDown{
+    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 50%;
+    position: absolute;
+    filter: invert(1);
+    animation-name: moveArrow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation: 3s moveArrow infinite ease-in-out;
+}
+
+@keyframes moveArrow{
+    0%{
+        top: 70%;
+    }
+    50%{
+        top: 73%;
+    }
+    100%{
+        top: 70%;
+    }
+}
+
 .heroImageZimmer{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/heroImages/zimmerHeroImage.jpg");
 }
@@ -60,6 +84,14 @@
 
 .heroImageHalls{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/heroImages/saalHeroImage.jpg");
+}
+
+.heroImageContact{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/heroImages/contactHeroImage.jpg");
+}
+
+.heroImageCareer{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/heroImages/careerHeroImage.jpg");
 }
 
 //menu
@@ -156,6 +188,7 @@ nav{
     &:hover{
         cursor: pointer;
         color: white;
+        background-color: @highlight-color-secondary;
     }
 }
 
@@ -205,7 +238,7 @@ nav{
 #closeIcon{
     fill: white;
     width: auto;
-    height: 10%;
+    height: 8%;
 
     &:hover{
         fill: @highlight-color-primary;
@@ -257,6 +290,101 @@ nav{
 
             #rooms{
                 .input;
+
+                &:active .roomSelection{
+                    display: flex;
+                }
+            }
+        }
+
+        .roomSelection{
+            position: absolute;
+            background-color: white;
+            border-radius: @border-radius;
+            display: none;
+            flex-direction: column;
+            width: inherit;
+            transform: translate(0, 60px);
+            font-size: 1rem;
+
+            #roomList{
+                max-height: 250px;
+                overflow-y: scroll;
+                border-top: 1px solid;
+                border-bottom: 1px solid;
+
+                .room{
+                    display: flex;
+                    flex-direction: column;
+                    border-bottom: 1px solid;
+                    line-height: 0;
+                    margin: 0;
+                    width: 90%;
+    
+                    .deleteRoom{
+                        cursor: pointer;
+                        justify-content: left;
+                        flex-direction: row;
+                        margin: 0;
+    
+                        img{
+                            margin: auto 0;
+                            width: 30px;
+                        }
+    
+                        &:hover,
+                        &:active{
+                            svg{
+                                fill: @highlight-color-secondary;
+                            }
+                        }
+                    }
+    
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+    
+                        .adultsValue,
+                        .childrenValue{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+    
+                            .minusButton,
+                            .plusButton{
+                                width: 30px;
+                                background-color: @highlight-color-primary;
+                                border-radius: 30px;
+                                cursor: pointer;
+    
+                                &:active,
+                                &:hover{
+                                    background-color: @highlight-color-secondary;
+                                }
+                            }
+    
+                            .value{
+                                font-size: 1.3rem;
+                                padding: 0 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #addRoom{
+                background-color: @highlight-color-primary;
+                width: 50%;
+                border-radius: @border-radius;
+                margin: 10px auto;
+                cursor: pointer;
+
+                &:active,
+                &:hover{
+                    background-color: @highlight-color-secondary;
+                    color: white;
+                }
             }
         }
     }
@@ -279,6 +407,10 @@ nav{
     }
 }
 
+#roomTemplate{
+    display: none;
+}
+
 
 //other screnns
 @media only screen and (min-width: 480px) {
@@ -294,6 +426,27 @@ nav{
     
     .smallMenuLogo{
         display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #bookingInput{
+        .inputField{
+            .roomSelection{
+                #roomList{
+                    .room{
+                        div{
+                            flex-direction: row;
+                
+                            .adultsValue,
+                            .childrenValue{
+                                justify-content: end;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -330,6 +483,21 @@ nav{
         .inputField{
             width: 20%;
             margin: 20px;
+
+            .roomSelection{
+                #roomList{
+                    .room{
+                        div{
+                            flex-direction: column;
+                
+                            .adultsValue,
+                            .childrenValue{
+                                justify-content: center;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         #submitButton{
@@ -347,6 +515,27 @@ nav{
     .heroImageHomepage{
         #logo{
             width: 20%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    #bookingInput{
+        .inputField{
+            .roomSelection{
+                #roomList{
+                    .room{
+                        div{
+                            flex-direction: row;
+                
+                            .adultsValue,
+                            .childrenValue{
+                                justify-content: end;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
