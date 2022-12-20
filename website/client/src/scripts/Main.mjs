@@ -1,4 +1,4 @@
-import { moveMenu, burgerMenu, bookingInput } from './Header.mjs';
+import { moveMenu, burgerMenu, bookingInput, bookingForm } from './Header.mjs';
 import { cardImage } from './Homepage.mjs';
 import $ from 'jquery';
 
@@ -6,6 +6,7 @@ $('header').load('header.html #header', function () {
   moveMenu();
   burgerMenu();
   bookingInput();
+  bookingForm();
   window.scrollTo({
     top: 0
   });
