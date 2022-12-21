@@ -22,11 +22,11 @@ export function ImagesModal () {
         if (e.keyCode === 37) {
           modalImg.src = images[prev].src;
           prev--;
-          next = prev + 2;
+          next = prev + 1;
         } else if (e.keyCode === 39) {
           modalImg.src = images[next].src;
           next++;
-          prev = next - 2;
+          prev = next - 1;
         } else if (e.keyCode === 27) {
           modal.removeAttribute('id', 'appear');
         }
@@ -34,7 +34,7 @@ export function ImagesModal () {
       prevBtn.addEventListener('click', () => {
         modalImg.src = images[prev].src;
         prev--;
-        next = prev + 2;
+        next = prev + 1;
         if (prev < 0) {
           prev = images.length - 1;
         }
@@ -42,7 +42,7 @@ export function ImagesModal () {
       nextBtn.addEventListener('click', () => {
         modalImg.src = images[next].src;
         next++;
-        prev = next - 2;
+        prev = next - 1;
         if (next >= images.length) {
           next = 0;
         }
