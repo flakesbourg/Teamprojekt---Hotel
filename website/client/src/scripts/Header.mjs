@@ -1,5 +1,4 @@
-import $ from 'jQuery';
-
+// Funktion damit die navbar kleben bleibt
 export function moveMenu () {
   window.addEventListener('scroll', onScroll);
   window.addEventListener('resize', onResize);
@@ -17,6 +16,7 @@ export function moveMenu () {
     onScroll();
   }
 
+  // navabar wird kleben wenn weit genug gescrollt wird
   function toggleSticky () {
     if (window.pageYOffset > sticky) {
       header.classList.add('sticky');
@@ -25,6 +25,7 @@ export function moveMenu () {
     }
   }
 
+  // opacity des backgrounds wird je nach scrolling fortschritt angepasst
   function changeOpacity () {
     if (window.pageYOffset < sticky) {
       header.style.background = 'none';
@@ -63,6 +64,7 @@ export function burgerMenu () {
   });
 }
 
+// Öffnen und Schließen des Buchungs Formulars
 export function bookingInput () {
   const booking = document.getElementById('bookingInput');
   const bookingButton = document.getElementsByClassName('bookingButton')[0];
@@ -70,6 +72,7 @@ export function bookingInput () {
   const roomSelection = document.getElementsByClassName('roomSelection')[0];
   setTop();
 
+  // 'verstecken' des formulars wenn die seite verändert wird
   window.addEventListener('resize', () => {
     if (window.getComputedStyle(booking).top !== navbar.offsetHeight + 'px') {
       setTop();
@@ -82,6 +85,7 @@ export function bookingInput () {
     }
   });
 
+  // öffnen und schließen des formulars
   bookingButton.onclick = async function () {
     if (window.pageYOffset < window.innerHeight) {
       window.scrollTo({
@@ -97,6 +101,7 @@ export function bookingInput () {
     }
   };
 
+  // Funktion zum 'verstecken' des formulars
   function setTop () {
     const bookingHeight = booking.offsetHeight;
     booking.style.top = '-' + (10 + bookingHeight) + 'px';
@@ -110,7 +115,9 @@ export function bookingInput () {
   }
 }
 
+// Funktion für alle Funktionalitäten der Zimmerauswahl
 export function bookingForm () {
+  // Zimmerauswahl wird ein- und ausgeblendet
   const roomInput = document.getElementById('rooms');
   const roomSelection = document.getElementsByClassName('roomSelection')[0];
   const closeSelection = document.getElementsByClassName('closeSelection')[0];
@@ -127,54 +134,66 @@ export function bookingForm () {
     roomSelection.style.display = 'none';
   });
 
-  const addRoom = document.getElementById('addRoom');
-  addRoom.addEventListener('click', () => {
-    const newRoom = $('#roomTemplate').children().clone().get(0);
+  const adults = document.getElementsByClassName('adults')[0];
+  const adultsValue = document.getElementsByClassName('adults')[0].querySelector('.value');
+  adults.querySelector('.minusButton').onclick = () => {
+    const value = Number(adultsValue.innerHTML);
+    if (value > 0) {
+      adultsValue.innerHTML = value - 1;
+      updateRoomInput();
+    }
+  };
+  adults.querySelector('.plusButton').onclick = () => {
+    const value = Number(adultsValue.innerHTML);
+    if (value < 4) {
+      adultsValue.innerHTML = value + 1;
+      updateRoomInput();
+    }
+  };
 
-    // Button zum entfernen des Zimmers
-    const deleteButton = newRoom.querySelector('.deleteRoom');
-    deleteButton.onclick = () => {
-      newRoom.remove();
-    };
+  const children = document.getElementsByClassName('children')[0];
+  const childrenValue = document.getElementsByClassName('children')[0].querySelector('.value');
+  children.querySelector('.minusButton').onclick = () => {
+    const value = Number(childrenValue.innerHTML);
+    if (value > 0) {
+      childrenValue.innerHTML = value - 1;
+      updateRoomInput();
+    }
+  };
+  children.querySelector('.plusButton').onclick = () => {
+    const value = Number(childrenValue.innerHTML);
+    if (value < 4) {
+      childrenValue.innerHTML = value + 1;
+      updateRoomInput();
+    }
+  };
 
-    // Auswahl der Menge von Erwachsenen
-    const adultMinus = newRoom.querySelector('.adultsValue .minusButton');
-    const adultPlus = newRoom.querySelector('.adultsValue .plusButton');
-    const adultValue = newRoom.querySelector('.adultsValue .value');
+  const rooms = document.getElementsByClassName('selectRooms')[0];
+  const roomsValue = document.getElementsByClassName('selectRooms')[0].querySelector('.value');
+  rooms.querySelector('.minusButton').onclick = () => {
+    const value = Number(roomsValue.innerHTML);
+    if (value > 0) {
+      roomsValue.innerHTML = value - 1;
+      updateRoomInput();
+    }
+  };
+  rooms.querySelector('.plusButton').onclick = () => {
+    const value = Number(roomsValue.innerHTML);
+    if (value < 4) {
+      roomsValue.innerHTML = value + 1;
+      updateRoomInput();
+    }
+  };
+  updateRoomInput();
+}
 
-    adultMinus.onclick = () => {
-      const value = Number(adultValue.innerHTML);
-      if (value > 0) {
-        adultValue.innerHTML = value - 1;
-      } else {
-        adultValue.innerHTML = 0;
-      }
-    };
+// Funktion die den Inhalt des Text-Inputs anpasst wenn die Zimmerauswahl verändert wird
+function updateRoomInput () {
+  const roomInput = document.getElementById('rooms');
+  const adultsValue = document.getElementsByClassName('adults')[0].querySelector('.value');
+  const childrenValue = document.getElementsByClassName('children')[0].querySelector('.value');
+  const roomsValue = document.getElementsByClassName('selectRooms')[0].querySelector('.value');
+  roomInput.value = '';
 
-    adultPlus.onclick = () => {
-      const value = Number(adultValue.innerHTML);
-      adultValue.innerHTML = value + 1;
-    };
-
-    // Auswahl der Menge der Kinder
-    const childMinus = newRoom.querySelector('.childrenValue .minusButton');
-    const childPlus = newRoom.querySelector('.childrenValue .plusButton');
-    const childValue = newRoom.querySelector('.childrenValue .value');
-
-    childMinus.onclick = () => {
-      const value = Number(childValue.innerHTML);
-      if (value > 0) {
-        childValue.innerHTML = value - 1;
-      } else {
-        childValue.innerHTML = 0;
-      }
-    };
-
-    childPlus.onclick = () => {
-      const value = Number(childValue.innerHTML);
-      childValue.innerHTML = value + 1;
-    };
-
-    $('#roomList').append(newRoom);
-  });
+  roomInput.value = 'E:' + adultsValue.innerHTML + '//K:' + childrenValue.innerHTML + '//Z:' + roomsValue.innerHTML;
 }
