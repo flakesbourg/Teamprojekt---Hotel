@@ -1,6 +1,16 @@
-import { moveMenu, burgerMenu, bookingInput, bookingForm } from './Header.mjs';
-import { cardImage } from './Homepage.mjs';
+import {
+  moveMenu,
+  burgerMenu,
+  bookingInput,
+  bookingForm
+} from './Header.mjs';
+import {
+  cardImage
+} from './Homepage.mjs';
 import $ from 'jquery';
+import {
+  ImagesModal
+} from './zimmerDetails.mjs';
 
 $('header').load('header.html #header', function () {
   moveMenu();
@@ -51,4 +61,7 @@ $('footer').load('footer.html #footer');
 
 if (document.title === 'Grandline Hotel' || document.title === 'Aktivitäten' || document.title === 'Tagen und Feiern') {
   cardImage();
+}
+if (document.title === 'Zimmer - Basic' || document.title === 'Zimmer - Family' || document.title === 'Zimmer - Premium') {
+  ImagesModal();
 }
