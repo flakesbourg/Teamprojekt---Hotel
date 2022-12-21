@@ -271,6 +271,7 @@ nav{
 
         svg{
             margin: auto;
+            display: none;
         }
 
         div{
@@ -306,84 +307,43 @@ nav{
             width: inherit;
             transform: translate(0, 60px);
             font-size: 1rem;
+            padding-bottom: 20px;
 
-            #roomList{
-                max-height: 250px;
-                overflow-y: scroll;
-                border-top: 1px solid;
-                border-bottom: 1px solid;
-
-                .room{
-                    display: flex;
-                    flex-direction: column;
-                    border-bottom: 1px solid;
-                    line-height: 0;
-                    margin: 0;
-                    width: 90%;
-    
-                    .deleteRoom{
-                        cursor: pointer;
-                        justify-content: left;
-                        flex-direction: row;
-                        margin: 0;
-    
-                        img{
-                            margin: auto 0;
-                            width: 30px;
-                        }
-    
-                        &:hover,
-                        &:active{
-                            svg{
-                                fill: @highlight-color-secondary;
-                            }
-                        }
-                    }
-    
-                    div{
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-end;
-    
-                        .adultsValue,
-                        .childrenValue{
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: center;
-    
-                            .minusButton,
-                            .plusButton{
-                                width: 30px;
-                                background-color: @highlight-color-primary;
-                                border-radius: 30px;
-                                cursor: pointer;
-    
-                                &:active,
-                                &:hover{
-                                    background-color: @highlight-color-secondary;
-                                }
-                            }
-    
-                            .value{
-                                font-size: 1.3rem;
-                                padding: 0 5px;
-                            }
-                        }
-                    }
+            .closeSelection{
+                svg{
+                    display: block;
                 }
             }
 
-            #addRoom{
-                background-color: @highlight-color-primary;
-                width: 50%;
-                border-radius: @border-radius;
-                margin: 10px auto;
-                cursor: pointer;
+            #roomList{
+                border-top: 1px solid;
+                border-bottom: 1px solid;
+                padding-bottom: 5px;
 
-                &:active,
-                &:hover{
-                    background-color: @highlight-color-secondary;
-                    color: white;
+                div{
+                    .adultsValue,
+                    .childrenValue,
+                    .roomValue{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        img{
+                            width: 35px;
+                            border-radius: @border-radius;
+                            background-color: @highlight-color-primary;
+                            cursor: pointer;
+
+                            &:active,
+                            &:hover{
+                                background-color: @highlight-color-secondary;
+                            }
+                        }
+                    }
+
+                    h3{
+                        margin: 0;
+                    }
                 }
             }
         }
@@ -411,6 +371,16 @@ nav{
     display: none;
 }
 
+@media only screen and (min-width: 340px){
+    #bookingInput{
+        .inputField{
+            svg{
+                display: block;
+            }
+        }
+    }
+}
+
 
 //other screnns
 @media only screen and (min-width: 480px) {
@@ -434,14 +404,14 @@ nav{
         .inputField{
             .roomSelection{
                 #roomList{
-                    .room{
-                        div{
-                            flex-direction: row;
-                
-                            .adultsValue,
-                            .childrenValue{
-                                justify-content: end;
-                            }
+                    div{
+                        flex-direction: row;
+                        justify-content: flex-end;
+
+                        .roomValue,
+                        .adultsValue,
+                        .childrenValue{
+                            justify-content: right;
                         }
                     }
                 }
@@ -486,14 +456,13 @@ nav{
 
             .roomSelection{
                 #roomList{
-                    .room{
-                        div{
-                            flex-direction: column;
-                
-                            .adultsValue,
-                            .childrenValue{
-                                justify-content: center;
-                            }
+                    div{
+                        flex-direction: column;
+
+                        .roomValue,
+                        .adultsValue,
+                        .childrenValue{
+                            justify-content: space-between;
                         }
                     }
                 }
@@ -524,14 +493,14 @@ nav{
         .inputField{
             .roomSelection{
                 #roomList{
-                    .room{
-                        div{
-                            flex-direction: row;
-                
-                            .adultsValue,
-                            .childrenValue{
-                                justify-content: end;
-                            }
+                    div{
+                        flex-direction: row;
+                        justify-content: flex-end;
+
+                        .roomValue,
+                        .adultsValue,
+                        .childrenValue{
+                            justify-content: right;
                         }
                     }
                 }
