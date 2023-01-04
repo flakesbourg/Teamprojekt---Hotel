@@ -145,7 +145,7 @@ export function bookingForm () {
   };
   adults.querySelector('.plusButton').onclick = () => {
     const value = Number(adultsValue.innerHTML);
-    if (value < 4) {
+    if (value < Number(roomsValue.innerHTML) * 2) {
       adultsValue.innerHTML = value + 1;
       updateRoomInput();
     }
@@ -162,7 +162,7 @@ export function bookingForm () {
   };
   children.querySelector('.plusButton').onclick = () => {
     const value = Number(childrenValue.innerHTML);
-    if (value < 4) {
+    if (value < Number(roomsValue.innerHTML) * 2) {
       childrenValue.innerHTML = value + 1;
       updateRoomInput();
     }
@@ -174,6 +174,12 @@ export function bookingForm () {
     const value = Number(roomsValue.innerHTML);
     if (value > 0) {
       roomsValue.innerHTML = value - 1;
+      if (Number(adultsValue.innerHTML) > Number(roomsValue.innerHTML) * 2) {
+        adultsValue.innerHTML = Number(roomsValue.innerHTML) * 2;
+      }
+      if (Number(childrenValue.innerHTML) > Number(roomsValue.innerHTML) * 2) {
+        childrenValue.innerHTML = Number(roomsValue.innerHTML) * 2;
+      }
       updateRoomInput();
     }
   };
@@ -196,4 +202,36 @@ function updateRoomInput () {
   roomInput.value = '';
 
   roomInput.value = 'E:' + adultsValue.innerHTML + '//K:' + childrenValue.innerHTML + '//Z:' + roomsValue.innerHTML;
+}
+
+export function checkForm () {
+  const arrivalInput = document.getElementById('arrival');
+  const departureInput = document.getElementById('departure');
+  const submit = document.getElementById('submitButton');
+
+  submit.onclick = () => {
+    const arrival = new Date(arrivalInput.value);
+    const departure = new Date(departureInput.value);
+    const adultsValue = Number(document.getElementsByClassName('adults')[0].querySelector('.value').innerHTML);
+    const childrenValue = Number(document.getElementsByClassName('children')[0].querySelector('.value').innerHTML);
+    const roomsValue = Number(document.getElementsByClassName('selectRooms')[0].querySelector('.value').innerHTML);
+
+    if (isNaN(arrival.getTime()) || isNaN(departure.getTime())) {
+      window.alert('Ankunft- und Abreiseteg müssen angegeben werden');
+    } else if (arrival < Date.now() || arrival > departure) {
+      window.alert('Ankunftstag kann nicht in der Vergangenheit oder vor dem Abreisetag liegen!');
+    } else if (roomsValue === 0 || adultsValue === 0) {
+      window.alert('Die Anzahl der Erwachsenen und Zimmer darf nicht 0 sein!');
+    } else {
+      const searchParams = new URLSearchParams(window.location.search);
+      searchParams.set('arrival', arrivalInput.value);
+      searchParams.set('departure', departureInput.value);
+      searchParams.set('adults', adultsValue);
+      searchParams.set('children', childrenValue);
+      searchParams.set('rooms', roomsValue);
+
+      const newPath = '/booking.html?' + searchParams.toString();
+      window.location = newPath;
+    }
+  };
 }

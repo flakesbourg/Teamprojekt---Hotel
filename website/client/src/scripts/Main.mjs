@@ -1,22 +1,16 @@
-import {
-  moveMenu,
-  burgerMenu,
-  bookingInput,
-  bookingForm
-} from './Header.mjs';
-import {
-  cardImage
-} from './Homepage.mjs';
+import { moveMenu, burgerMenu, bookingInput, bookingForm, checkForm } from './Header.mjs';
+import { cardImage } from './Homepage.mjs';
 import $ from 'jquery';
-import {
-  ImagesModal
-} from './zimmerDetails.mjs';
+import { ImagesModal } from './zimmerDetails.mjs';
+import { bookingDialog } from './Booking.mjs';
 
 $('header').load('header.html #header', function () {
   moveMenu();
   burgerMenu();
   bookingInput();
   bookingForm();
+  checkForm();
+
   window.scrollTo({
     top: 0
   });
@@ -64,4 +58,7 @@ if (document.title === 'Grandline Hotel' || document.title === 'Aktivitäten' ||
 }
 if (document.title === 'Zimmer - Basic' || document.title === 'Zimmer - Family' || document.title === 'Zimmer - Premium') {
   ImagesModal();
+}
+if (document.title === 'Buchen') {
+  bookingDialog();
 }

@@ -15,6 +15,9 @@ const server = express();
 server.use(express.static(path.join(
   path.dirname(process.argv[1]), 'client/dist')));
 
+server.use(express.static(path.join(
+  path.dirname(process.argv[1]), 'client/dist/templates')));
+
 server.use('/', router);
 
 server.listen(port);
