@@ -32,7 +32,7 @@ server.get('/getAvailableRooms', (req, res) => {
         }
         rooms = rooms.filter(item => !notAvailable.includes(item));
         if (rooms.length === 0) {
-          res.status(204).send();
+          res.status(204).send(rooms);
         } else {
           res.status(200).send(rooms);
         }

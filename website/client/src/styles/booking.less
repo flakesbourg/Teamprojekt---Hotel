@@ -38,8 +38,7 @@
 
 .dialog{
     width: 90%;
-    margin: auto;
-    margin-top: 100px;
+    margin: 100px auto;
     background-color: @background-color-secondary;
     border-radius: @border-radius;
 
@@ -47,7 +46,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        width: 50%;
+        width: 80%;
         padding-bottom: 20px;
         margin: auto;
 
@@ -71,9 +70,11 @@
                 color: white;
             }
 
-            & .deactivated{
+            &:disabled,
+            &[disabled]{
                 background-color: lightgrey;
                 color: black;
+                cursor: default;
             }
         }
     }
@@ -110,6 +111,13 @@
 }
 
 .dialogStepTwo{
+    padding: 20px;
+
+    h2{
+        color: white;
+        margin-top: 0;
+    }
+
     .availableRooms{
         display: flex;
         flex-direction: column;
@@ -117,14 +125,16 @@
         div{
             display: flex;
             flex-direction: row;
-            width: 90%;
-            border-top: 1px white solid;
+            flex-wrap: wrap;
+            width: 100%;
+            border-bottom: 1px white solid;
             margin: auto;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
             color: white;
 
             img{
-                width: 30%;
+                width: 50%;
                 height: max-content;
                 margin: auto;
                 border-radius: @border-radius;
@@ -133,9 +143,10 @@
             ul{
                 width: 30%;
                 line-height: 1.1;
+                font-size: 0.7rem;
 
                 p{
-                    font-size: 1.4rem;
+                    font-size: 1.3rem;
                     line-height: 0;
                     color: @highlight-color-primary;
                 }
@@ -144,7 +155,7 @@
             .addAvailable{
                 display: flex;
                 flex-direction: column;
-                width: 25%;
+                width: 100%;
                 border-style: none;
                 margin: auto;
 
@@ -164,14 +175,92 @@
             }
         }
     }
+
+    .selectedRooms{
+        width: 90%;
+        margin: auto;
+
+        .selectedBasic,
+        .selectedFamily,
+        .selectedPremium{
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-size: 0.8rem;
+
+            .delete{
+                height: 20px;
+                filter: invert(1);
+                border-radius: 15px;
+                cursor: pointer;
+
+                &:hover,
+                &:active{
+                    filter: invert(0);
+                    background-color: @highlight-color-primary;
+                }
+            }
+
+            h3{
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 360px) {
+    .dialogStepTwo{
+        .selectedRooms{
+            width: 80%;
+        }
+    }
 }
 
 @media only screen and (min-width: 480px) {
+    .dialog{
+        .dialogNavigation{
+            width: 50%;
+        }
+    }
+
     .dialogStepOne{
         .dialogStepOnePart{
             flex-direction: row;
         }
     }
+
+    .dialogStepTwo{
+        .availableRooms{
+    
+            div{
+                flex-wrap: nowrap;
+    
+                img{
+                    width: 30%;
+                }
+    
+                ul{
+                    font-size: 1rem;
+                }
+
+                .addAvailable{
+                    width: 30%;
+                }
+            }
+        }
+
+        .selectedRooms{
+            width: 70%;
+
+            .selectedBasic,
+            .selectedFamily,
+            .selectedPremium{
+                font-size: 1rem;
+            }
+        }
+    }
+    
+        
 }
 
 @media only screen and (min-width: 600px) {
@@ -205,6 +294,10 @@
                 }
             }
         }
+
+        .selectedRooms{
+            width: 65%;
+        }
     }
 }
 
@@ -215,5 +308,11 @@
 
     .dialogStepOne{
         padding: 0 30%;
+    }
+
+    .dialogStepTwo{
+        .selectedRooms{
+            width: 50%;
+        }
     }
 }
