@@ -208,6 +208,37 @@
     }
 }
 
+.dialogStepThree{
+    width: 90%;
+    margin: auto;
+    color: white;
+
+    .pContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .pInput{
+            margin: 0;
+        }
+    }
+
+    .pInput{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        
+        input, 
+        select{
+            border-radius: @border-radius;
+            padding: 5px;
+        }
+    }
+}
+
 @media only screen and (min-width: 360px) {
     .dialogStepTwo{
         .selectedRooms{

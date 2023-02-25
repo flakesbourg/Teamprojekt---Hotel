@@ -165,5 +165,64 @@
                 </div>
             </div>
         </template>
+        <template id="three">
+            <div class="dialogStepThree">
+                <h2>Persönliche Daten</h2>
+                <div class="pInput">
+                    <label for="gender">Geschlecht:</label>
+                    <select name="gender" id="gender" required>
+                        <option value="m">
+                            männlich
+                        </option>
+                        <option value="w">
+                            weiblich
+                        </option>
+                        <option value="d">
+                            divers
+                        </option>
+                    </select>
+                </div>
+
+                <div class="pContainer">
+                    <div class="pInput">
+                        <label for="pFirstName">Vorname:</label>
+                        <input type="text" name="pFirstName" id="pFirstName" required>
+                    </div>
+
+                    <div class="pInput">
+                        <label for="pLastName">Nachname:</label>
+                        <input type="text" name="pLastName" id="pLastName" required>
+                    </div>
+                </div>
+
+                <div class="pContainer">
+                    <div class="pInput">
+                        <label for="pEmail">Email:</label>
+                        <input type="email" name="pEmail" id="pEmail" required>
+                    </div>
+
+                    <div class="pInput">
+                        <label for="pPhoneNumber">Telefon:</label>
+                        <input type="text" name="pPhoneNumber" id="pPhoneNumber" required>
+                    </div>
+                </div>
+
+                <div class="pContainer">
+                    <div class="pInput">
+                        <label for="pStreet">Straße:</label>
+                        <input type="text" name="pStreet" id="pStreet" required>
+                    </div>
+                    <div class="pInput">
+                        <label for="pHouseNumber">Hausnummer:</label>
+                        <input type="text" name="pHouseNumber" id="pHouseNumber" required>
+                    </div>
+                </div>
+
+                <div class="pInput">
+                    <label for="pZipCode">PLZ:</label>
+                    <input type="text" name="pZipCode" id="pZipCode" required>
+                </div>
+            </form>
+        </template>
     </body>
 </html>
