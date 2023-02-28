@@ -437,11 +437,7 @@ export function bookingDialog () {
     request = new XMLHttpRequest();
 
     request.addEventListener('load', () => {
-      if (request.status === 200) {
-        showRooms(request.response);
-      } else if (request.status === 204) {
-        notAvailable();
-      }
+      console.log(request.response);
     });
 
     request.open('POST', '/order');
@@ -449,7 +445,7 @@ export function bookingDialog () {
     request.setRequestHeader('Content-Type', 'application/json');
     request.responseType = 'json';
     const data = {
-      user: { firstName: firstName, lastName: lastName, gender: gender, email: email, address: { street: street, city: place, zipCode: zipCode, houseNumber: houseNumber } },
+      user: { firstName: firstName, lastName: lastName, gender: gender, email: email, phone: phone, address: { street: street, city: place, zipCode: zipCode, houseNumber: houseNumber } },
       reservations: { basic: selectedRooms.get('basic'), family: selectedRooms.get('family'), premium: selectedRooms.get('premium'), arrival: arrival, departure: departure }
     };
     request.send(JSON.stringify(data));
