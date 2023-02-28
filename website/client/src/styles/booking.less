@@ -171,6 +171,11 @@
                         background-color: @highlight-color-secondary;
                         color: white;
                     }
+
+                    &:disabled,
+                    &[disabled]{
+                        background-color: lightgray;
+                    }
                 }
             }
         }
@@ -225,19 +230,61 @@
         }
     }
 
-    .pInput{
-        width: 45%;
+}
+
+.pInput{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    
+    input, 
+    select{
+        border-radius: @border-radius;
+        padding: 5px;
+    }
+}
+
+.dialogStepFour{
+    width: 60%;
+    margin: auto;
+    color: white;
+
+    .personalData{
+        h3{
+            text-decoration: solid 1px black;
+        }
+
+        p{
+            margin: 0;
+        }
+    }
+
+    .totalSelectedRooms{
+        p{
+            margin: 0;
+        }
+    }
+
+    .extrasContainer{
         display: flex;
         flex-direction: column;
         margin-bottom: 20px;
+        width: 100%;
+
+        #extrasLabel{
+            margin-top: 25px;
+            font-size: 1.3rem;
+        }
         
-        input, 
-        select{
-            border-radius: @border-radius;
-            padding: 5px;
+        #extras{
+            border-radius: 5px;
+            width: 100%;
+            resize: vertical;
         }
     }
 }
+
 
 @media only screen and (min-width: 360px) {
     .dialogStepTwo{

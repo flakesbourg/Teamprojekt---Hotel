@@ -166,7 +166,7 @@
             </div>
         </template>
         <template id="three">
-            <div class="dialogStepThree">
+            <form class="dialogStepThree">
                 <h2>Persönliche Daten</h2>
                 <div class="pInput">
                     <label for="gender">Geschlecht:</label>
@@ -198,7 +198,7 @@
                 <div class="pContainer">
                     <div class="pInput">
                         <label for="pEmail">Email:</label>
-                        <input type="email" name="pEmail" id="pEmail" required>
+                        <input type="email" name="pEmail" id="pEmail" placeholder="me@example.com" required>
                     </div>
 
                     <div class="pInput">
@@ -218,11 +218,37 @@
                     </div>
                 </div>
 
-                <div class="pInput">
-                    <label for="pZipCode">PLZ:</label>
-                    <input type="text" name="pZipCode" id="pZipCode" required>
+                <div class="pContainer">
+                    <div class="pInput">
+                        <label for="pZipCode">PLZ:</label>
+                        <input type="text" name="pZipCode" id="pZipCode" required>
+                    </div>
+                    <div class="pInput">
+                        <label for="pPlace">Ort:</label>
+                        <input type="text" name="pPlace" id="pPlace" required>
+                    </div>
                 </div>
             </form>
+        </template>
+        <template id="four">
+            <div class="dialogStepFour">
+                <div class="personalData">
+                    <h3>Persönliche Daten</h3>
+                    <p class="personalDataName"></p>
+                    <p class="personalDataAddress"></p>
+                    <p class="personalDataPhone"></p>
+                    <p class="personalDataEmail"></p>
+                </div>
+                <div class="totalSelectedRooms">
+                    <h3>Ausgewählte Zimmer</h3>
+                </div>
+                <div class="extrasContainer">
+                    <h3>Amerkungen und Extras:</h3>
+                    <textarea name="extras" id="extras" placeholder="  Hier können Sie Anmerkungen/Extra äußern:"></textarea>
+                </div>
+                <h3 class="total"></h3>
+                <p>Zahle den genannten Betrag beim Einchecken</p>
+            </div>
         </template>
     </body>
 </html>

@@ -3,7 +3,7 @@ import XMLHttpRequest from 'xhr2';
 export function bookingDialog () {
   const backToPrevious = document.getElementsByClassName('backToPreviousSite')[0];
   backToPrevious.onclick = () => {
-    window.history.back();
+    window.location.href = '/';
   };
 
   let request;
@@ -36,9 +36,11 @@ export function bookingDialog () {
       }
     } else if (currentStep === 2 && checkInputStepTwo()) {
       loadStepThree();
-    } else if (currentStep === 3) {
-      readStepThree();
-      console.log(firstName, lastName, gender, email, phone, street, houseNumber, zipCode);
+    } else if (currentStep === 3 && readStepThree()) {
+      dialogForward.innerHTML = 'Abschließen';
+      loadStepFour();
+    } else if (currentStep === 4) {
+      completeOrder();
     }
   };
 
@@ -50,6 +52,9 @@ export function bookingDialog () {
     } else if (currentStep === 3) {
       dialogForward.disabled = true;
       loadStepTwo();
+    } else if (currentStep === 4) {
+      dialogForward.innerHTML = 'Weiter';
+      loadStepThree();
     }
   };
 
@@ -82,6 +87,7 @@ export function bookingDialog () {
   let street;
   let houseNumber;
   let zipCode;
+  let place;
 
   // lesen der queryParameter und laden des ersten oder zweiten schritts
   window.addEventListener('load', () => {
@@ -113,7 +119,7 @@ export function bookingDialog () {
 
   function loadStepOne () {
     currentStep = 1;
-    dialogProgress.innerHTML = '1 / 3';
+    dialogProgress.innerHTML = '1 / 4';
 
     dialog.innerHTML = '';
     stepOne = document.querySelector('#one').content.cloneNode(true);
@@ -169,7 +175,7 @@ export function bookingDialog () {
 
   function loadStepTwo () {
     currentStep = 2;
-    dialogProgress.innerHTML = '2 / 3';
+    dialogProgress.innerHTML = '2 / 4';
 
     dialog.innerHTML = '';
     getAvailableRooms();
@@ -207,77 +213,80 @@ export function bookingDialog () {
 
     const stepTwo = document.querySelector('#two').content.cloneNode(true);
 
-    let basic = data.filter(item => item.type === 'basic').length;
-    let family = data.filter(item => item.type === 'family').length;
-    let premium = data.filter(item => item.type === 'premium').length;
+    let basic = data.filter(item => item.roomType === 'basic').length;
+    let family = data.filter(item => item.roomType === 'family').length;
+    let premium = data.filter(item => item.roomType === 'premium').length;
 
     // räume hinzufügen
     const addBasic = document.querySelector('#addBasic').content.cloneNode(true);
-    if (basic > 0) {
-      addBasic.querySelector('.addAvailableButton').onclick = () => {
-        if (basic > 0 && selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') < rooms) {
-          basic = basic - 1;
-          selectedRooms.set('basic', selectedRooms.get('basic') + 1);
-          updateSelectedRooms();
-        }
+    addBasic.querySelector('.addAvailableButton').onclick = () => {
+      if (basic > 0 && selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') < rooms) {
+        basic = basic - 1;
+        selectedRooms.set('basic', selectedRooms.get('basic') + 1);
+        updateSelectedRooms();
+      }
 
-        if (selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') === rooms) {
-          dialogForward.disabled = false;
-        }
+      if (selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') === rooms) {
+        dialogForward.disabled = false;
+      }
 
-        if (basic === 0) {
-          document.querySelector('.basicAvailable').style.display = 'none';
-        }
-      };
-      stepTwo.querySelector('.availableRooms').appendChild(addBasic);
+      if (basic === 0) {
+        document.querySelector('.basicAvailable .addAvailableButton').disabled = true;
+      }
+    };
+    if (basic === 0) {
+      document.querySelector('.basicAvailable .addAvailableButton').disabled = true;
     }
+    stepTwo.querySelector('.availableRooms').appendChild(addBasic);
 
     const addFamily = document.querySelector('#addFamily').content.cloneNode(true);
-    if (family > 0) {
-      addFamily.querySelector('.addAvailableButton').onclick = () => {
-        if (family > 0 && selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') < rooms) {
-          family = family - 1;
-          selectedRooms.set('family', selectedRooms.get('family') + 1);
-          updateSelectedRooms();
-        }
+    addFamily.querySelector('.addAvailableButton').onclick = () => {
+      if (family > 0 && selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') < rooms) {
+        family = family - 1;
+        selectedRooms.set('family', selectedRooms.get('family') + 1);
+        updateSelectedRooms();
+      }
 
-        if (selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') === rooms) {
-          dialogForward.disabled = false;
-        }
+      if (selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') === rooms) {
+        dialogForward.disabled = false;
+      }
 
-        if (family === 0) {
-          document.querySelector('.familyAvailable').style.display = 'none';
-        }
-      };
-      stepTwo.querySelector('.availableRooms').appendChild(addFamily);
+      if (family === 0) {
+        document.querySelector('.familyAvailable .addAvailableButton').disabled = true;
+      }
+    };
+    if (family === 0) {
+      document.querySelector('.basicAvailable .addAvailableButton').disabled = true;
     }
+    stepTwo.querySelector('.availableRooms').appendChild(addFamily);
 
     const addPremium = document.querySelector('#addPremium').content.cloneNode(true);
-    if (premium > 0) {
-      addPremium.querySelector('.addAvailableButton').onclick = () => {
-        if (premium > 0 && selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') < rooms) {
-          premium = premium - 1;
-          selectedRooms.set('premium', selectedRooms.get('premium') + 1);
-          updateSelectedRooms();
-        }
+    addPremium.querySelector('.addAvailableButton').onclick = () => {
+      if (premium > 0 && selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') < rooms) {
+        premium = premium - 1;
+        selectedRooms.set('premium', selectedRooms.get('premium') + 1);
+        updateSelectedRooms();
+      }
 
-        if (selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') === rooms) {
-          dialogForward.disabled = false;
-        }
+      if (selectedRooms.get('basic') + selectedRooms.get('family') + selectedRooms.get('premium') === rooms) {
+        dialogForward.disabled = false;
+      }
 
-        if (premium === 0) {
-          document.querySelector('.premiumAvailable').style.display = 'none';
-        }
-      };
-      stepTwo.querySelector('.availableRooms').appendChild(addPremium);
+      if (premium === 0) {
+        document.querySelector('.premiumAvailable .addAvailableButton').disabled = true;
+      }
+    };
+    if (premium === 0) {
+      document.querySelector('.basicAvailable .addAvailableButton').disabled = true;
     }
+    stepTwo.querySelector('.availableRooms').appendChild(addPremium);
 
     // delete buttons
     stepTwo.querySelector('.selectedBasic .delete').onclick = () => {
       if (selectedRooms.get('basic') > 0) {
         basic = basic + 1;
         selectedRooms.set('basic', selectedRooms.get('basic') - 1);
-        document.querySelector('.basicAvailable').style.display = 'flex';
+        document.querySelector('.basicAvailable .addAvailableButton').disabled = false;
         dialogForward.disabled = true;
         updateSelectedRooms();
       }
@@ -287,7 +296,7 @@ export function bookingDialog () {
       if (selectedRooms.get('family') > 0) {
         family = family + 1;
         selectedRooms.set('family', selectedRooms.get('family') - 1);
-        document.querySelector('.familyAvailable').style.display = 'flex';
+        document.querySelector('.familyAvailable .addAvailableButton').disabled = false;
         dialogForward.disabled = true;
         updateSelectedRooms();
       }
@@ -297,7 +306,7 @@ export function bookingDialog () {
       if (selectedRooms.get('premium') > 0) {
         premium = premium + 1;
         selectedRooms.set('premium', selectedRooms.get('premium') - 1);
-        document.querySelector('.premiumAvailable').style.display = 'flex';
+        document.querySelector('.premiumAvailable .addAvailableButton').disabled = false;
         dialogForward.disabled = true;
         updateSelectedRooms();
       }
@@ -352,7 +361,7 @@ export function bookingDialog () {
 
   function loadStepThree () {
     currentStep = 3;
-    dialogProgress.innerHTML = '3 / 3';
+    dialogProgress.innerHTML = '3 / 4';
 
     dialog.innerHTML = '';
     const stepThree = document.querySelector('#three').content.cloneNode(true);
@@ -368,5 +377,81 @@ export function bookingDialog () {
     street = document.querySelector('#pStreet').value;
     houseNumber = document.querySelector('#pHouseNumber').value;
     zipCode = document.querySelector('#pZipCode').value;
+    place = document.querySelector('#pPlace').value;
+
+    if (firstName.trim() === '' || lastName.trim() === '' || street.trim() === '' || place.trim() === '') {
+      window.alert('Bitte einen gültigen Vor-, Nachnamen oder eine gültige Straße angeben.');
+      return false;
+    }
+
+    if (Number.isNaN(Number(phone)) || Number.isNaN(Number(zipCode)) || Number.isNaN(Number(houseNumber))) {
+      window.alert('Bitte eine gültige Telefonnummber, Hausnummer oder PLZ angeben.');
+      return false;
+    }
+
+    if (gender !== 'm' && gender !== 'w' && gender !== 'd') {
+      window.alert('Bitte ein passendes Geschlecht wählen.');
+      return false;
+    }
+
+    const re = /\S+@\S+\.\S/;
+    if (!re.test(email)) {
+      window.alert('Bitte eine gültige Email Adresse angeben.');
+      return false;
+    }
+
+    return true;
+  }
+
+  function loadStepFour () {
+    currentStep = 4;
+    dialogProgress.innerHTML = '4 / 4';
+
+    dialog.innerHTML = '';
+    const stepFour = document.querySelector('#four').content.cloneNode(true);
+    stepFour.querySelector('.personalDataName').innerHTML = firstName + ' ' + lastName;
+    stepFour.querySelector('.personalDataAddress').innerHTML = street + ' ' + houseNumber + ', ' + zipCode + ' ' + place;
+    stepFour.querySelector('.personalDataPhone').innerHTML = 'Telefon: ' + phone;
+    stepFour.querySelector('.personalDataEmail').innerHTML = 'Email: ' + email;
+
+    const totalBasic = document.createElement('p');
+    totalBasic.innerHTML = selectedRooms.get('basic') + ' x basic';
+
+    const totalFamily = document.createElement('p');
+    totalFamily.innerHTML = selectedRooms.get('family') + ' x family';
+
+    const totalPremium = document.createElement('p');
+    totalPremium.innerHTML = selectedRooms.get('premium') + ' x premium';
+
+    stepFour.querySelector('.totalSelectedRooms').appendChild(totalBasic);
+    stepFour.querySelector('.totalSelectedRooms').appendChild(totalFamily);
+    stepFour.querySelector('.totalSelectedRooms').appendChild(totalPremium);
+
+    const total = selectedRooms.get('family') * 179 + selectedRooms.get('basic') * 149 + selectedRooms.get('premium') * 229;
+    stepFour.querySelector('.total').innerHTML = 'Gesamtsumme: ' + total + '€';
+
+    dialog.appendChild(stepFour);
+  }
+
+  function completeOrder () {
+    request = new XMLHttpRequest();
+
+    request.addEventListener('load', () => {
+      if (request.status === 200) {
+        showRooms(request.response);
+      } else if (request.status === 204) {
+        notAvailable();
+      }
+    });
+
+    request.open('POST', '/order');
+    request.setRequestHeader('Accept', 'application/json');
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.responseType = 'json';
+    const data = {
+      user: { firstName: firstName, lastName: lastName, gender: gender, email: email, address: { street: street, city: place, zipCode: zipCode, houseNumber: houseNumber } },
+      reservations: { basic: selectedRooms.get('basic'), family: selectedRooms.get('family'), premium: selectedRooms.get('premium'), arrival: arrival, departure: departure }
+    };
+    request.send(JSON.stringify(data));
   }
 }
