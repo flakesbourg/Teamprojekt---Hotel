@@ -437,7 +437,25 @@ export function bookingDialog () {
     request = new XMLHttpRequest();
 
     request.addEventListener('load', () => {
-      console.log(request.response);
+      if (request.status === 200) {
+        const endDialog = document.getElementsByClassName('dialog')[0];
+        const text = document.createElement('h2');
+        text.innerHTML = 'Reservierung ist abgeschlossen.<br>Email mit allen Details wurde an : "' + email + '" gesendet.';
+
+        const buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('buttonContainer');
+
+        const backToHome = document.createElement('button');
+        backToHome.innerHTML = 'Zurück zur Homepage';
+        backToHome.addEventListener('click', () => {
+          window.location.href = '/';
+        });
+
+        buttonContainer.appendChild(backToHome);
+        endDialog.innerHTML = '';
+        endDialog.appendChild(text);
+        endDialog.appendChild(buttonContainer);
+      }
     });
 
     request.open('POST', '/order');

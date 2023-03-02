@@ -42,6 +42,32 @@
     background-color: @background-color-secondary;
     border-radius: @border-radius;
 
+    h2{
+        width: 80%;
+        margin: auto;
+        padding: 25px 0;
+        color: white;
+    }
+
+    .buttonContainer{
+        text-align: center;
+
+        button{
+            margin-bottom: 25px;
+            padding: 8px;
+            border-radius: 10px;
+            border-style: none;
+            cursor: pointer;
+            background-color: @highlight-color-primary;
+
+            &:hover,
+            &:active{
+                background-color: @highlight-color-secondary;
+                color: white;
+            }
+        }
+    }
+
     .dialogNavigation{
         display: flex;
         flex-direction: row;
