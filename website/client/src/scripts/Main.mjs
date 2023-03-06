@@ -3,6 +3,7 @@ import { cardImage } from './Homepage.mjs';
 import $ from 'jquery';
 import { ImagesModal } from './zimmerDetails.mjs';
 import { bookingDialog } from './Booking.mjs';
+import { weather } from './Weather.mjs';
 
 $('header').load('header.html #header', function () {
   moveMenu();
@@ -61,4 +62,7 @@ if (document.title === 'Zimmer - Basic' || document.title === 'Zimmer - Family' 
 }
 if (document.title === 'Buchen') {
   bookingDialog();
+}
+if (document.title === 'Grandline Hotel') {
+  weather();
 }

@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { router } from './server/src/Main.mjs';
+import { weahterRouter } from './server/src/Weather.mjs';
 
 let port = 8080;
 
@@ -19,5 +20,6 @@ server.use(express.static(path.join(
   path.dirname(process.argv[1]), 'client/dist/templates')));
 
 server.use('/', router);
+server.use(weahterRouter);
 
 server.listen(port);
