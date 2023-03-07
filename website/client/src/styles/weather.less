@@ -1,0 +1,118 @@
+@import "variables.less";
+
+#weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border-radius: @border-radius;
+    background-color: @background-color-secondary;
+    color: white;
+    padding: 20px;
+    margin: 50px auto;
+
+    .cardText{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto auto 20px auto;
+
+        .cardUnderline{
+            height: 5px;
+            width: 50%;
+            background-color: white;
+        }
+
+        h1{
+            white-space: nowrap;
+            font-size: 1.3rem;
+        }
+    }
+    
+    .weatherDate{
+        width: 90%;
+        text-align: center;
+        font-size: 1.2rem;
+        margin: auto;
+        margin-top: 15px;
+    }
+
+    .forecastList{
+        display: flex;
+        flex-wrap: wrap;
+    
+        .weatherDay{
+            flex: 50%;
+            border-bottom: 1px solid white;
+
+            p{
+                text-align: center;
+            }
+
+            .temperature{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                p{
+                    margin-top: 0;
+                    color: @highlight-color-primary;
+                }
+            }
+    
+            .humidity{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 25px;
+    
+                img{
+                    filter: invert(1);
+                }
+    
+                p{
+                    color: deepskyblue;
+                }
+            }
+        }
+    }
+
+    h4{
+        text-align: center;
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #weather{
+        .cardText{
+            h1{
+                white-space: nowrap;
+                font-size: 2rem;
+            }
+        }
+
+        .forecastList{
+            flex-wrap: nowrap;
+
+            .weatherDay{
+                border: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #weather{
+        width: 60%;
+
+        .forecastList{
+            .weatherDay{
+                margin: 0 15px;
+            }
+        }
+    }
+}

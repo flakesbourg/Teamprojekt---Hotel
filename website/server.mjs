@@ -1,6 +1,8 @@
 import express from 'express';
 import path from 'path';
-import { router } from './server/src/Main.mjs';
+import { roomsRouter } from './server/src/Rooms.mjs';
+import { orderRouter } from './server/src/Order.mjs';
+import { weahterRouter } from './server/src/Weather.mjs';
 
 let port = 8080;
 
@@ -18,6 +20,8 @@ server.use(express.static(path.join(
 server.use(express.static(path.join(
   path.dirname(process.argv[1]), 'client/dist/templates')));
 
-server.use('/', router);
+server.use('/', roomsRouter);
+server.use(orderRouter);
+server.use(weahterRouter);
 
 server.listen(port);

@@ -5,7 +5,9 @@ const client = new MongoClient('mongodb://127.0.0.1:27017');
 const dataBase = 'hotel';
 const server = new express.Router();
 
-server.get('/getAvailableRooms', (req, res) => {
+server.use(express.json());
+
+server.get('/rooms', (req, res) => {
   const arrival = new Date(req.query.arrival);
   const departure = new Date(req.query.departure);
 
@@ -43,4 +45,4 @@ server.get('/getAvailableRooms', (req, res) => {
   }
 });
 
-export { server as router };
+export { server as roomsRouter };
