@@ -195,7 +195,7 @@ export function bookingDialog () {
       }
     });
 
-    request.open('GET', '/getAvailableRooms?arrival=' + arrival.toISOString().substring(0, 10) + '&departure=' + departure.toISOString().substring(0, 10));
+    request.open('GET', '/rooms?arrival=' + arrival.toISOString().substring(0, 10) + '&departure=' + departure.toISOString().substring(0, 10));
     request.setRequestHeader('Accept', 'text/json');
     request.responseType = 'json';
     request.send();
