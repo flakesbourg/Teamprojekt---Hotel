@@ -2,7 +2,7 @@
 website/secrets/
 
 # ignore node_modules
-website/node_modules/
+# website/node_modules/
 
 # ignore client dist directory
 website/client/dist/
