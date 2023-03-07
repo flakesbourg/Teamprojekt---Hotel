@@ -181,7 +181,7 @@ export function bookingDialog () {
     selectedRooms.set('basic', 0);
     selectedRooms.set('family', 0);
     selectedRooms.set('premium', 0);
-    
+
     if (data.length < rooms) {
       notAvailable();
       return;
