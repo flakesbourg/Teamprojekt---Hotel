@@ -4,6 +4,7 @@ import $ from 'jquery';
 import { ImagesModal } from './zimmerDetails.mjs';
 import { bookingDialog } from './Booking.mjs';
 import { weather } from './Weather.mjs';
+import { myBooking } from './MyBooking.mjs';
 
 $('header').load('header.html #header', function () {
   moveMenu();
@@ -50,11 +51,23 @@ $('header').load('header.html #header', function () {
       $('#logo').replaceWith('<h1 id="headline">Karriere</h1>');
       document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageCareer');
       break;
+    case 'Fitness':
+      $('#logo').replaceWith('<h1 id="headline">Fitness</h1>');
+      document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageFitness');
+      break;
+    case 'Restaurant':
+      $('#logo').replaceWith('<h1 id="headline">Restaurant</h1>');
+      document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageRestaurant');
+      break;
+    case 'Wellness':
+      $('#logo').replaceWith('<h1 id="headline">Wellness</h1>');
+      document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageWellness');
+      break;
   }
 });
 $('footer').load('footer.html #footer');
 
-if (document.title === 'Grandline Hotel' || document.title === 'Aktivitäten' || document.title === 'Tagen und Feiern') {
+if (document.title === 'Grandline Hotel' || document.title === 'Aktivitäten' || document.title === 'Tagen und Feiern' || document.title === 'Fitness' || document.title === 'Restaurant' || document.title === 'Wellness') {
   cardImage();
 }
 if (document.title === 'Zimmer - Basic' || document.title === 'Zimmer - Family' || document.title === 'Zimmer - Premium') {
@@ -65,4 +78,7 @@ if (document.title === 'Buchen') {
 }
 if (document.title === 'Grandline Hotel') {
   weather();
+}
+if (document.title === 'Meine Buchung') {
+  myBooking();
 }

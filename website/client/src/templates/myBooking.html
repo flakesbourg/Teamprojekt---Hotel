@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Meine Buchung</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../assets/final_logo_3.svg">
+        <script defer src="../bundle.js"></script>
+    </head>
+    <body>
+        <div class="bookingNavbar">
+            <img class="bookingLogo" src="../assets/final_logo_2.svg">
+            <div class="backToPreviousSite">
+                <img src="../assets/icons/arrow_back.svg">
+                <p>Zurück</p>
+            </div>
+        </div>
+        <div class="myBooking">
+            <div class="getByBookingNumber">
+                <input type="text" placeholder="Bestellnummer" name="bookingNumber" id="bookingNumber">
+                <button id="getBooking">Bestellung anzeigen</button>
+            </div>
+            <div id="bookingContainer">
+
+            </div>
+        </div>
+        <template id="bookingDetails">
+            <div class="showBooking">
+                <div class="hotelInformation">
+                    <iframe width="90%" height="400px" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJnSlf3FO3v0cRCbkYyE5vbF8&key=AIzaSyBotT-09erfZ-T2uNTtIvH8Y92dK-ahsS0"></iframe>
+                    <div class="hotelAddress">
+                        <p>Vulkanstraße 11</p>
+                        <p>Vulkaneifel</p>
+                        <p>54550 Daun</p>
+                        <p>Deutschland</p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="hotelContact">
+                        <h4>Stelle uns deine Fragen!</h4>
+                        <p>+01 23 4325362</p>
+                        <p>grandlinehotelvulkan@gmail.com</p>
+                    </div>
+                </div>
+                <div class="bookingInformation">
+                    <div class="bookingNumber">
+                        <h4>Bestellnummer:</h4>
+                        <p></p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="checkIn">
+                        <p>Check-in</p>
+                        <h4></h4>
+                    </div>
+                    <div class="checkOut">
+                        <p>Check-out</p>
+                        <h4></h4>
+                    </div>
+                    <div class="line"></div>
+                    <div class="bookingTotal">
+                        <h4></h4>
+                        <h3></h3>
+                    </div>
+                </div>
+                <div class="bookingOptions">
+                    <button id="changeBooking">An-/Abreisedatum ändern</button>
+                    <button id="cancelBooking">Buchung stornieren</button>
+                </div>
+            </div>
+        </template>
+        <div class="changeDateModal">
+            <div class="modalContainer">
+                <img src="assets/icons/close.svg" id="closeModal">
+                <div class="modalArrival">
+                    <h4>
+                        Ankunft:
+                    </h4>
+                    <input type="date" id="newArrivalDate">
+                </div>
+                <div class="modalDeparture">
+                    <h4>
+                        Abreise:
+                    </h4>
+                    <input type="date" id="newDepartureDate">
+                </div>
+                <button id="changeDates">Daten ändern</button>
+            </div>
+        </div>
+    </body>
+</html>

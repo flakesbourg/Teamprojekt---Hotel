@@ -256,7 +256,7 @@ export function bookingDialog () {
       }
     };
     if (family === 0) {
-      document.querySelector('.basicAvailable .addAvailableButton').disabled = true;
+      document.querySelector('.familyAvailable .addAvailableButton').disabled = true;
     }
     stepTwo.querySelector('.availableRooms').appendChild(addFamily);
 
@@ -277,7 +277,7 @@ export function bookingDialog () {
       }
     };
     if (premium === 0) {
-      document.querySelector('.basicAvailable .addAvailableButton').disabled = true;
+      document.querySelector('.premiumAvailable .addAvailableButton').disabled = true;
     }
     stepTwo.querySelector('.availableRooms').appendChild(addPremium);
 
@@ -428,7 +428,9 @@ export function bookingDialog () {
     stepFour.querySelector('.totalSelectedRooms').appendChild(totalPremium);
 
     const total = selectedRooms.get('family') * 179 + selectedRooms.get('basic') * 149 + selectedRooms.get('premium') * 229;
-    stepFour.querySelector('.total').innerHTML = 'Gesamtsumme: ' + total + '€';
+    const totalRooms = selectedRooms.get('family') + selectedRooms.get('basic') + selectedRooms.get('premium');
+    const totalNights = (departure.getTime() - arrival.getTime()) / (1000 * 3600 * 24);
+    stepFour.querySelector('.total').innerHTML = 'Gesamtsumme für ' + totalNights + ' Nächte in ' + totalRooms + ' Zimmer/n: ' + (total * totalNights) + '€';
 
     dialog.appendChild(stepFour);
   }

@@ -9,6 +9,62 @@ const server = new express.Router();
 
 server.use(express.json());
 
+server.get('/order/:id', (req, res) => {
+  const id = req.params.id;
+
+  if (ObjectId.isValid(id)) {
+    try {
+      (async function () {
+        client.connect();
+        const db = client.db(dataBase);
+
+        const reservationCollection = db.collection('reservations');
+        const reservations = await reservationCollection.find({ customer: ObjectId(id) }).toArray();
+
+        if (reservations.length === 0) {
+          res.sendStatus(404);
+          return;
+        }
+
+        const roomCollection = db.collection('rooms');
+        const rooms = await roomCollection.find().toArray();
+
+        const arrival = new Date(reservations[0].arrival);
+        const departure = new Date(reservations[0].departure);
+
+        const totalNights = (departure.getTime() - arrival.getTime()) / (1000 * 3600 * 24);
+
+        let totalPrice = 0;
+
+        for (const room of rooms) {
+          for (const reservation of reservations) {
+            if (room._id.equals(reservation.room)) {
+              totalPrice += room.price;
+            }
+          }
+        }
+
+        totalPrice *= totalNights;
+
+        const data = {
+          id: id,
+          arrival: arrival,
+          departure: departure,
+          nights: totalNights,
+          price: totalPrice,
+          rooms: reservations.length
+        };
+
+        res.status(200).send(JSON.stringify(data));
+      })();
+    } catch (error) {
+      res.status(404).send();
+    }
+  } else {
+    res.sendStatus(400);
+  }
+});
+
 server.post('/order', (req, res) => {
   const firstName = req.body.user.firstName;
   const lastName = req.body.user.lastName;
@@ -110,6 +166,7 @@ server.post('/order', (req, res) => {
               </div>
             </div>
           </div>
+          <a href="">Buchung Stornieren</a>
           `;
 
           const transporter = nodemailer.createTransport({
@@ -162,6 +219,75 @@ server.delete('/order/:id', (req, res) => {
         customersCollection.deleteOne({ _id: ObjectId(id) });
 
         res.sendStatus(200);
+      })();
+    } catch (error) {
+      res.status(404).send();
+    }
+  }
+});
+
+server.post('/order/dates', function (req, res) {
+  const id = req.body.id;
+  const newArrival = new Date(req.body.arrival);
+  const newDeparture = new Date(req.body.departure);
+
+  if (!ObjectId.isValid(id) || isNaN(newArrival.getTime()) || isNaN(newDeparture.getTime()) || newArrival < Date.now() || newArrival > newDeparture) {
+    res.sendStatus(400);
+  } else {
+    try {
+      (async function () {
+        client.connect();
+        const db = client.db(dataBase);
+        const reservationCollection = db.collection('reservations');
+
+        const reservations = await reservationCollection.find({ customer: { $ne: ObjectId(id) } }).toArray();
+        const myReservations = await reservationCollection.find({ customer: ObjectId(id) }).toArray();
+
+        let myRooms = [];
+        for (let i = 0; i < myReservations.length; i++) {
+          myRooms.push(new ObjectId(myReservations[i].room));
+        }
+
+        const roomCollection = db.collection('rooms');
+        const rooms = await roomCollection.find().toArray();
+        myRooms = await roomCollection.find({ _id: { $in: myRooms } }).toArray();
+        const notAvailable = [];
+
+        for (const room of rooms) {
+          for (const reservation of reservations) {
+            if (room._id.equals(reservation.room) && !(newDeparture < new Date(reservation.arrival) || newArrival > new Date(reservation.departure))) {
+              notAvailable.push(room);
+              break;
+            }
+          }
+        }
+
+        const availableRooms = rooms.filter((elem) => !notAvailable.includes(elem));
+
+        const myBasic = (myRooms.filter((elem) => elem.roomType === 'basic')).length;
+        const myFamily = (myRooms.filter((elem) => elem.roomType === 'family')).length;
+        const myPremium = (myRooms.filter((elem) => elem.roomType === 'premium')).length;
+
+        const basicAmount = availableRooms.filter(item => item.roomType === 'basic');
+        const familyAmount = availableRooms.filter(item => item.roomType === 'family');
+        const premiumAmount = availableRooms.filter(item => item.roomType === 'premium');
+
+        if (myBasic > basicAmount.length || myFamily > familyAmount.length || myPremium > premiumAmount.length) {
+          res.status(400).send('Die ausgewählten Zimmer sind nicht verfügbar');
+        } else {
+          reservationCollection.deleteMany({ customer: ObjectId(id) });
+
+          for (let i = 0; i < myBasic; i++) {
+            reservationCollection.insertOne({ customer: new ObjectId(id), room: new ObjectId(basicAmount[i]._id), arrival: newArrival.toISOString().substring(0, 10), departure: newDeparture.toISOString().substring(0, 10) });
+          }
+          for (let i = 0; i < myFamily; i++) {
+            reservationCollection.insertOne({ customer: new ObjectId(id), room: new ObjectId(familyAmount[i]._id), arrival: newArrival.toISOString().substring(0, 10), departure: newDeparture.toISOString().substring(0, 10) });
+          }
+          for (let i = 0; i < myPremium; i++) {
+            reservationCollection.insertOne({ customer: new ObjectId(id), room: new ObjectId(premiumAmount[i]._id), arrival: newArrival.toISOString().substring(0, 10), departure: newDeparture.toISOString().substring(0, 10) });
+          }
+          res.sendStatus(200);
+        }
       })();
     } catch (error) {
       res.status(404).send();
