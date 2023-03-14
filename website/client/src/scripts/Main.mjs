@@ -39,8 +39,8 @@ $('header').load('header.html #header', function () {
       $('#logo').replaceWith('<h1 id="headline">Aktivitäten</h1>');
       document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageActivities');
       break;
-    case 'Tagen und Feiern':
-      $('#logo').replaceWith('<h1 id="headline">Tagen und Feiern</h1>');
+    case 'Tagungsräume':
+      $('#logo').replaceWith('<h1 id="headline">Tagungsräume</h1>');
       document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageHalls');
       break;
     case 'Kontakt':
