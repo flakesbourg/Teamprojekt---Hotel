@@ -36,6 +36,9 @@ export function myBooking () {
 function loadBooking (data) {
   const booking = document.querySelector('#bookingDetails').content.cloneNode(true);
 
+  document.querySelector('#newArrivalDate').value = (new Date(data.arrival)).toISOString().substring(0, 10);
+  document.querySelector('#newDepartureDate').value = (new Date(data.departure)).toISOString().substring(0, 10);
+
   booking.querySelector('.bookingNumber p').innerHTML = data.id;
   booking.querySelector('.checkIn h4').innerHTML = (new Date(data.arrival)).toLocaleDateString('de-DE');
   booking.querySelector('.checkOut h4').innerHTML = (new Date(data.departure)).toLocaleDateString('de-DE');
@@ -61,6 +64,9 @@ function loadBooking (data) {
       changeDates(data.id);
     }
   };
+
+  document.querySelector('#newArrivalDate').min = new Date().toISOString().split('T')[0];
+  document.querySelector('#newDepartureDate').min = new Date().toISOString().split('T')[0];
 
   document.querySelector('#bookingContainer').innerHTML = '';
   document.querySelector('#bookingContainer').appendChild(booking);

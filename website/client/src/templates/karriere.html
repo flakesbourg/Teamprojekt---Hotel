@@ -51,50 +51,50 @@
             <div class="bewerbung">
                 <h1>Bewerben Sie sich bei uns!</h1>
                 <div class="underline"></div>
-                <form>
+                <form method="post" action="/career" enctype="multipart/form-data">
 				    <div class="group">
                         <div class="groupForm">
-                         <label for="Anrede">Anrede* :</label>
-				            <select name="Anrede" id="Anrede">
-			        	    	<option value="Herr">Herr</option>
-			            		<option value="Frau">Frau</option>
-				        	    <option value="Diverse">Diverse</option>
+                         <label for="gender">Anrede* :</label>
+				            <select name="gender" id="Anrede">
+			        	    	<option value="m">Herr</option>
+			            		<option value="w">Frau</option>
+				        	    <option value="d">Diverse</option>
 				            </select>
                         </div>
                         <div class="groupForm third">
                             <label for="fname">Vorname* :</label>
-				            <input type="text" placeholder="Ihr Vorname" required>
+				            <input name="fname" id="fname" type="text" placeholder="Ihr Vorname" required>
                         </div>
 
 				        <div class="groupForm third">
                             <label for="lname">Nachname* :</label>
-				            <input type="text" placeholder="Ihr Nachname" required>
+				            <input name="lname" id="lname" type="text" placeholder="Ihr Nachname" required>
                         </div>
                     </div>
                     <div class="group">
                         <div class="groupForm half">
                             <label for="email">Email* :</label>
-				            <input type="email" placeholder="Ihre Email" required>
+				            <input name="email" id="email" type="email" placeholder="Ihre Email" required>
                         </div>
                         <div class="groupForm half">
-                            <label for="Telefonnummer">Telefonnummer* :</label>
-				            <input type="text" placeholder="Telefonnummer" required>
+                            <label for="phone">Telefonnummer* :</label>
+				            <input name="phone" id="phone" type="text" placeholder="Telefonnummer" required>
                         </div>
                     </div>
 
                     <label for="application">Bewerbung* :</label>
-                    <input type="file" accept=".pdf" required>
+                    <input name="application" id="application" type="file" accept=".pdf" required>
 
                     <label for="cv">Lebenslauf* :</label>
-                    <input type="file" accept=".pdf" required>
+                    <input name="cv" id="cv" type="file" accept=".pdf" required>
 
-                    <label for="sonstige">Sonstige Datei :</label>
-                    <input type="file" accept=".pdf">
+                    <label for="other">Sonstige Datei :</label>
+                    <input name="other" id="other" type="file" accept=".pdf">
 
                     <p>Felder mit * bitte ausfüllen</p>
 
-				    <label for="Ihre Nachricht">Ihre Nachricht :</label>
-				    <textarea placeholder="Ihre Nachricht"></textarea>
+				    <label for="message">Ihre Nachricht :</label>
+				    <textarea name="message" id="message" placeholder="Ihre Nachricht"></textarea>
 				    <input id="submitButton" type="submit" value="Senden">
                 </form>
             </div>

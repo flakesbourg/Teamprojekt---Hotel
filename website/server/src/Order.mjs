@@ -214,9 +214,34 @@ server.delete('/order/:id', (req, res) => {
         const reservationCollection = db.collection('reservations');
         const customersCollection = db.collection('customers');
 
+        const customer = await customersCollection.find({ _id: ObjectId(id) }).toArray();
+
         reservationCollection.deleteMany({ customer: ObjectId(id) });
 
         customersCollection.deleteOne({ _id: ObjectId(id) });
+
+        const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: emailData.user,
+            pass: emailData.pass
+          }
+        });
+
+        const mailOptions = {
+          from: emailData.user,
+          to: customer[0].email,
+          subject: 'Stornierung - Grandline Hotel',
+          html: '<h3>Ihre Buchung mit der Buchungsnummer ' + customer[0]._id + ' wurde erfolgreich storniert.'
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log('Email wurde gesendet: ' + info.response);
+          }
+        });
 
         res.sendStatus(200);
       })();

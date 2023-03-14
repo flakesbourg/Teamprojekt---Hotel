@@ -131,6 +131,10 @@ export function bookingDialog () {
 
     arrivalDialog.value = arrival.toISOString().substring(0, 10);
     departureDialog.value = departure.toISOString().substring(0, 10);
+
+    arrivalDialog.min = new Date().toISOString().split('T')[0];
+    departureDialog.min = new Date().toISOString().split('T')[0];
+
     adultsDialog.value = adults;
     childrenDialog.value = children;
     roomsDialog.value = rooms;

@@ -6,3 +6,6 @@ website/node_modules/
 
 # ignore client dist directory
 website/client/dist/
+
+# ignore public files directory
+website/public/files/

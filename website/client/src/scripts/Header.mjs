@@ -117,6 +117,13 @@ export function bookingInput () {
 
 // Funktion für alle Funktionalitäten der Zimmerauswahl
 export function bookingForm () {
+  // An-/Abreisetag begrenzen
+  const arrivalInput = document.getElementById('arrival');
+  const departureInput = document.getElementById('departure');
+
+  arrivalInput.min = new Date().toISOString().split('T')[0];
+  departureInput.min = new Date().toISOString().split('T')[0];
+
   // Zimmerauswahl wird ein- und ausgeblendet
   const roomInput = document.getElementById('rooms');
   const roomSelection = document.getElementsByClassName('roomSelection')[0];
