@@ -43,6 +43,10 @@ $('header').load('header.html #header', function () {
       $('#logo').replaceWith('<h1 id="headline">Tagungsräume</h1>');
       document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageHalls');
       break;
+    case 'Tagen und Feiern':
+      $('#logo').replaceWith('<h1 id="headline">Tagen und Feiern</h1>');
+      document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageMeeting');
+      break;
     case 'Kontakt':
       $('#logo').replaceWith('<h1 id="headline">Kontakt</h1>');
       document.getElementsByClassName('heroImageHomepage')[0].classList.add('heroImageContact');
@@ -67,7 +71,7 @@ $('header').load('header.html #header', function () {
 });
 $('footer').load('footer.html #footer');
 
-if (document.title === 'Grandline Hotel' || document.title === 'Aktivitäten' || document.title === 'Tagen und Feiern' || document.title === 'Fitness' || document.title === 'Restaurant' || document.title === 'Wellness') {
+if (document.title === 'Grandline Hotel' || document.title === 'Aktivitäten' || document.title === 'Tagen und Feiern' || document.title === 'Tagungsräume' || document.title === 'Fitness' || document.title === 'Restaurant' || document.title === 'Wellness') {
   cardImage();
 }
 if (document.title === 'Zimmer - Basic' || document.title === 'Zimmer - Family' || document.title === 'Zimmer - Premium') {
