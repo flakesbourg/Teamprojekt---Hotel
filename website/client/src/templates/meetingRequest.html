@@ -13,6 +13,54 @@
 
         </header>
         <main>
+            <form id="request">
+                <div class="checkAvailability">
+                    <div class="numberOfPeopleContainer">
+                        <label for="numberOfPeople">Personenanzahl:</label>
+                        <input name="numberOfPeople" id="numberOfPeople" type="number" min="10" max="150" value="10" required>
+                    </div>
+                    <div class="eventDateContainer">
+                        <label for="eventDate">Datum der Veranstaltung:</label>
+                        <input name="eventDate" id="eventDate" type="date" required>
+                    </div>
+                    <button id="checkEvent">Verfügbarkeit prüfen</button>
+                </div>
+                <div class="requestContainer">
+                    <div>
+                        <label for="requestFirstName">Vorname</label>
+                        <input name="requestFirstName" type="text" required>
+                    </div>
+                    <div>
+                        <label for="requestLastName">Nachname</label>
+                        <input name="requestLastName" type="text" required>
+                    </div>
+                    <div>
+                        <label for="requestCompany">Ihr Unternehmen (optional)</label>
+                        <input name="requestCompany" type="text" required>
+                    </div>
+                    <div>
+                        <label for="requestReason">Grund für die Veranstaltung</label>
+                        <input name="requestReason" type="text" required>
+                    </div>
+                    <div>
+                        <label for="requestEmail">Email</label>
+                        <input name="requestEmail" type="email" required>
+                    </div>
+                    <div>
+                        <label for="requestPhone">Telefon</label>
+                        <input name="requestPhone" type="text" required>
+                    </div>
+                    <div>
+                        <label>Räumlichkeit</label>
+                        <select>
+                            <option value="small">kleiner Tagungssaal</option>
+                            <option value="medium">mittlerer Tagungssaal</option>
+                            <option value="large">großer Tagungssaal</option>
+                        </select>
+                    </div>
+                    <input id="requestSubmit" type="submit">
+                </div>
+            </form>
         </main>
         <footer>
 
