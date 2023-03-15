@@ -5,6 +5,7 @@ import { ImagesModal } from './zimmerDetails.mjs';
 import { bookingDialog } from './Booking.mjs';
 import { weather } from './Weather.mjs';
 import { myBooking } from './MyBooking.mjs';
+import { kontaktDaten } from './KontaktDaten.mjs';
 
 $('header').load('header.html #header', function () {
   moveMenu();
@@ -85,4 +86,7 @@ if (document.title === 'Grandline Hotel') {
 }
 if (document.title === 'Meine Buchung') {
   myBooking();
+}
+if (document.title === 'Kontakt') {
+  kontaktDaten();
 }

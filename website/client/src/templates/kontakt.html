@@ -25,16 +25,16 @@
 						<option value="Firma">Firma</option>
 					</select>
 					<label for="fname">Vorname :</label>
-					<input type="text" name="fname" placeholder="Ihr Vorname" required>
+					<input id="fname" type="text" name="fname" placeholder="Ihr Vorname" required>
 					<label for="lname">Nachname :</label>
-					<input type="text" id="name" name="lname" placeholder="Ihr Nachname" required>
+					<input type="text" id="lname" name="lname" placeholder="Ihr Nachname" required>
 					<label for="email">Email :</label>
 					<input type="email" id="email" name="email" placeholder="Ihre Email" required>
 					<label for="Telefonnummer">Telefonnummer :</label>
-					<input type="text" name="phonenr" placeholder="Telefonnummer">
+					<input id="phonenr" type="text" name="phonenr" placeholder="Telefonnummer">
 					<label for="message">Ihre Nachricht :</label>
 					<textarea name="message" id="message" placeholder="Ihre Nachricht" required></textarea>
-					<input type="submit" onclick="sendMail()" value="Senden">
+					<input type="submit" value="Senden">
 				</div>
 				<div class="kontaktInfo">
 					<h3>Kontaktieren Sie uns </h3>
@@ -64,36 +64,5 @@
 	<footer>
 		
 	</footer>
-	<script
-	type="text/javascript"
-	src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-  ></script>
-  <script type="text/javascript">      (function () {
-	  emailjs.init("BqkjrVvH5LUPvUXwn");
-	})();
-  </script>
-<script>
-	emailjs.sendForm("service_qm46iw8", "template_0lmws5a", "#myForm")
-	</script>
-	<script>
-		document
-		  .getElementById("myForm")
-		  .addEventListener("submit", function (event) {
-			event.preventDefault();
-  
-			const serviceID = "service_qm46iw8";
-			const templateID = "template_0lmws5a";
-  
-			emailjs.sendForm(serviceID, templateID, this).then(
-			  (response) => {
-				console.log("SUCCESS!", response.status, response.text);
-				alert("Ihre Nachricht wurde erfolgreich geschickt!!");
-			  },
-			  (error) => {
-				console.log("FAILED...", error);
-				alert("Ein Fehler ist aufgetreten, versuchen Sie es später nochmal...", error);
-			  }
-			);
-		  });
-	  </script>
+	
 </body>
