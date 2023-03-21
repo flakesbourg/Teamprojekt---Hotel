@@ -13,7 +13,8 @@
 
         </header>
         <main>
-            <form id="request">
+            <form method="post" action="/event" id="request">
+                <h3 class="requestHeadline">Senden Sie uns hier Ihre Anfragen für Veranstaltungen.</h3>
                 <div class="checkAvailability">
                     <div class="numberOfPeopleContainer">
                         <label for="numberOfPeople">Personenanzahl:</label>
@@ -23,7 +24,7 @@
                         <label for="eventDate">Datum der Veranstaltung:</label>
                         <input name="eventDate" id="eventDate" type="date" required>
                     </div>
-                    <button id="checkEvent">Verfügbarkeit prüfen</button>
+                    <button type="button" id="checkEvent">Verfügbarkeit prüfen</button>
                 </div>
                 <div class="requestContainer">
                     <div>
@@ -36,7 +37,7 @@
                     </div>
                     <div>
                         <label for="requestCompany">Ihr Unternehmen (optional)</label>
-                        <input name="requestCompany" type="text" required>
+                        <input name="requestCompany" type="text">
                     </div>
                     <div>
                         <label for="requestReason">Grund für die Veranstaltung</label>
@@ -52,10 +53,8 @@
                     </div>
                     <div>
                         <label>Räumlichkeit</label>
-                        <select>
-                            <option value="small">kleiner Tagungssaal</option>
-                            <option value="medium">mittlerer Tagungssaal</option>
-                            <option value="large">großer Tagungssaal</option>
+                        <select name="premise" id="selectPremise">
+
                         </select>
                     </div>
                     <input id="requestSubmit" type="submit">

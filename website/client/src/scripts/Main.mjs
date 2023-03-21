@@ -6,6 +6,7 @@ import { bookingDialog } from './Booking.mjs';
 import { weather } from './Weather.mjs';
 import { myBooking } from './MyBooking.mjs';
 import { kontaktDaten } from './KontaktDaten.mjs';
+import { requestMeetingRoom } from './Meeting.mjs';
 
 $('header').load('header.html #header', function () {
   moveMenu();
@@ -89,4 +90,7 @@ if (document.title === 'Meine Buchung') {
 }
 if (document.title === 'Kontakt') {
   kontaktDaten();
+}
+if (document.title === 'Anfragen') {
+  requestMeetingRoom();
 }
