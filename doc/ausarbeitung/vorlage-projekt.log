@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.4)  22 MAR 2023 14:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.4)  23 MAR 2023 22:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -705,7 +705,7 @@ bibgerm.sty: babel.sty detected
 
 pdfTeX warning: pdflatex.exe (file ./images/logo-fb-informatik.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/logo-fb-informatik.pdf, id=67, 811.81792pt x 157.11497pt>
+<images/logo-fb-informatik.pdf, id=103, 811.81792pt x 157.11497pt>
 File: images/logo-fb-informatik.pdf Graphic file (type pdf)
 <use images/logo-fb-informatik.pdf>
 Package pdftex.def Info: images/logo-fb-informatik.pdf  used on input line 87.
@@ -773,46 +773,50 @@ LaTeX Warning: Reference `Bausteine' on page 2 undefined on input line 12.
 
 ]
 Kapitel 3.
+) (chapters/Konzept.tex
+Underfull \hbox (badness 10000) in paragraph at lines 20--1
 
-LaTeX Warning: Reference `Bausteine' on page 3 undefined on input line 12.
+ []
 
-) (chapters/Konzept.tex [3
+[3
 
 
-]
+] [4]
 Kapitel 4.
+<images/Architektur.png, id=187, 695.59875pt x 161.85469pt>
+File: images/Architektur.png Graphic file (type png)
+<use images/Architektur.png>
+Package pdftex.def Info: images/Architektur.png  used on input line 4.
+(pdftex.def)             Requested size: 418.25368pt x 97.321pt.
+) (chapters/RealisierungImplementierung.tex [5
 
-LaTeX Warning: Reference `Bausteine' on page 4 undefined on input line 12.
 
-) (chapters/RealisierungImplementierung.tex [4
-
-
-]
+ <./images/Architektur.png>]
 Kapitel 5.
 
-LaTeX Warning: Reference `Bausteine' on page 5 undefined on input line 12.
+LaTeX Warning: Reference `Bausteine' on page 6 undefined on input line 12.
 
-[5
+[6
 
 
 ]
 Kapitel 6.
-) (chapters/Beispiel.tex [6
+) (chapters/Beispiel.tex [7
 
 
 ]
 Kapitel 7.
-[7
+[8
 
 
-] [8]) (chapters/Anwendungsszenarien.tex [9]
+] [9]) (chapters/Anwendungsszenarien.tex [10]
 Kapitel 8.
-) (chapters/ZusammenfassungAusblick.tex [10
+) (chapters/ZusammenfassungAusblick.tex [11
 
 
 ]
 Kapitel 9.
-) [11
+) [12
 
 
 ] (vorlage-projekt.bbl
@@ -823,7 +827,7 @@ tt/m/n/12 https : / / de . wikipedia . org / wiki /
 
 )
 No file vorlage-projekt.ind.
-[12
+[13
 
 
 
@@ -841,7 +845,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-) [13
+) [14
 
 
 
@@ -849,17 +853,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `vorlage-projekt.out' has not changed.
-(rerunfilecheck)             Checksum: 46D73E6D8F691313CB329CD42570B18F;2455.
+
+Package rerunfilecheck Warning: File `vorlage-projekt.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `vorlage-projekt.out':
+(rerunfilecheck)             Before: 4C0D6193FEBCEE77804AF392AB5B2611;3364
+(rerunfilecheck)             After:  905707AD937588860C45E17FC7D63563;3359.
  ) 
 Here is how much of TeX's memory you used:
- 15957 strings out of 478582
- 261786 string characters out of 2844817
- 586807 words of memory out of 3000000
- 33823 multiletter control sequences out of 15000+600000
+ 15987 strings out of 478582
+ 262306 string characters out of 2844817
+ 586810 words of memory out of 3000000
+ 33840 multiletter control sequences out of 15000+600000
  476875 words of font info for 56 fonts, out of 8000000 for 9000
  1146 hyphenation exceptions out of 8191
- 60i,10n,63p,1000b,553s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 60i,10n,63p,1000b,552s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Alex\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 200.pk><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -874,9 +884,9 @@ x/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/U
 sers/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.p
 fb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/sym
 bols/msam10.pfb>
-Output written on vorlage-projekt.pdf (19 pages, 580172 bytes).
+Output written on vorlage-projekt.pdf (20 pages, 607684 bytes).
 PDF statistics:
- 271 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 327 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
+ 211 words of extra memory for PDF output out of 10000 (max. 10000000)
 
