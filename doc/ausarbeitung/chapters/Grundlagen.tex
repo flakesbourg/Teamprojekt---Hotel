@@ -2,6 +2,8 @@
 
 \section{HTML, CSS, JS}
 \subsection{HTML}
+HTML-Dokumente bilden das Grundgerüst einer Webanwendung und sind von daher essenziell. Ein solches Dokument besteht aus einzelnen, oft schon vorgefertigten Elementen die ineinander geschachtelt werden können. Diese können anschließend durch referenzierte \glqq Stylesheets\grqq \thinspace(im Folgenden anhand von Less) in ihrem Aussehen verändert oder durch JavaScript mit weiteren Funktionalitäten ausgestattet werden.
+
 \subsection{Less}
 In dieser Anwendung wird die \glqq Stylesheet-Sprache\grqq \thinspace Less verwendet, um die verschiedenen HTML Elemente zu gestalten. Innerhalb des Less-Codes kann normaler CSS-Code verwendet werden, bietet jedoch einige Vorteile im Vergleich zu dieser herkömmlichen Stylesheet-Sprache wie zum Beispiel Variablen, Funktionen und Verschachtelung. Für die endgültige Nutzung dieser Sprache wird eine Kompilierung des Codes zu CSS-Code benötigt. Less bietet außerdem die Möglichkeit den Code auf mehrere Dateien aufzuteilen und diese durch die Kompilierung zu einer CSS-Datei zu bündeln.
 
@@ -42,7 +44,12 @@ Mit den sogenannten \glqq Orbit Controls\grqq \thinspace aus dem Three.js-Modul 
 Die serverseitige Grundlage des Systems bildet die Laufzeitumgebung Node.js. Mit dieser ist es möglich JavaScript Programme abseits eines Browsers ausführen zu können. Mithilfe von \glqq npm\grqq, dem Paketmanager von Node.js, werden außerdem externe Pakete bzw. Module für bestimmte Funktionalitäten verwendet um die Implementierung zu vereinfachen.
 
 \subsection{Express}
-Das Express-Framework ermöglicht eine unkomplizierte Erstellung einer Webanwendung. So wird beispielsweise die Verarbeitung von HTTP-Anfragen mithilfe von spezifischen Methoden deutlich vereinfacht und macht das Erstellen einer API besonders effizient. Innerhalb der Buchungssoftware sorgt Express für die Bereitstellung eines Servers, der alle clientseitigen Dateien zur Verfügung stellt und auf HTTP-Anfragen zur Erzeugung oder zum Abrufen von Buchungen, reagiert.
+Das Express-Framework ermöglicht eine unkomplizierte Erstellung einer Webanwendung. So wird beispielsweise die Verarbeitung von HTTP-Anfragen mithilfe von spezifischen Methoden deutlich vereinfacht und macht das Erstellen einer API besonders effizient. Innerhalb der Buchungssoftware sorgt Express für die Bereitstellung eines Servers, der alle clientseitigen Dateien zur Verfügung stellt und auf HTTP-Anfragen zur Erzeugung oder zum Abrufen von Buchungen, reagiert. Besonders wichtig ist das Konzept der Routen. Das Definieren von Routen bestimmt wie auf eine Client-Anfrage an eine bestimmte URI des Servers und eine spezifische HTTP-Methode, geantwortet wird. Die Zuweisung einer Route kann wie folgt aussehen: 
+\begin{lstlisting}{Router}
+	app.METHOD(PATH, HANDLER);
+\end{lstlisting}
+In dem Beispiel steht app exemplarisch für ein express-Objekt, METHOD für eine HTTP-Methode, PATH für den Serverpfad und HANDLER für die Funktion die ausgeführt wird wenn eine Client-Anfrage existiert, die mit der Route übereinstimmt. Die Funktion die als HANDLER angegeben wird hat außerdem Zugriff auf ein HTTP-Request und ein HTTP-Response Objekt. Über das Request-Objekt kann auf Informationen der HTTP-Anfrage zugegriffen und mit dem Response-Objekt auf die Anfrage geantwortet werden.
+
 
 \subsection{Nodemailer}
 Nodemailer ist ein \glqq npm\grqq-Paket, das dafür verwendet wird E-Mails mit Node.js zu versenden. Durch Angabe der Adresse von der die E-Mail verschickt werden soll und verschiedenen Optionen wie z.B. dem Betreff wird das Senden vereinfacht. Um eine E-Mail zu versenden muss im ersten Schritt ein \glqq Transporter\grqq zusammen mit dem verwendeten Mail Dienst und den Anmeldeinformationen der zu sendenen E-Mail Adresse, erzeugt werden. Anschließend werden die Mail-Optionen initialisiert und über die Methode \glqq sendMail\grqq des Transportes, die E-Mail versandt.
