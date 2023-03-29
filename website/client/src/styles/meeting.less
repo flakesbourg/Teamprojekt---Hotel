@@ -46,12 +46,133 @@
     }
 }
 
+#request{
+    width: 80%;
+    padding: 20px;
+    margin: 50px auto;
+    background-color: @background-color-secondary;
+    border-radius: @border-radius;
+
+    .requestHeadline{
+        color: white;
+        margin: auto;
+        margin-bottom: 15px;
+        width: fit-content;
+        text-align: justify;
+        text-decoration: underline;
+    }
+
+    .checkAvailability{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    
+        .numberOfPeopleContainer,
+        .eventDateContainer{
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px;
+            background-color: white;
+            border-left: 4px solid @highlight-color-primary;
+            border-right: 4px solid @highlight-color-primary;
+        }
+    
+        .numberOfPeopleContainer{
+            border-radius: @border-radius @border-radius 0 0;
+            border-top: 4px solid @highlight-color-primary;
+        }
+    
+        #checkEvent{
+            border-style: none;
+            background-color: @highlight-color-primary;
+            border-radius: 0 0 @border-radius @border-radius;
+            height: 40px;
+            cursor: pointer;
+    
+            &:hover,
+            &:active{
+                color: white;
+                background-color: @highlight-color-secondary;
+            }
+        }
+    }
+
+    .requestContainer{
+        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+
+        div{
+            display: flex;
+            flex-direction: column;
+            flex: 50%;
+            margin: 10px auto;
+            color: white;
+
+            input,
+            select{
+                border-radius: @border-radius;
+                padding: 7px;
+            }
+        }
+
+        #requestSubmit{
+            width: 55%;
+            padding: 10px 0;
+            border-style: none;
+            border-radius: @border-radius;
+            background-color: @highlight-color-primary;
+            cursor: pointer;
+            
+            &:hover,
+            &:active{
+                color: white;
+                background-color: @highlight-color-secondary;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    #request{
+        .checkAvailability{
+            flex-direction: row;
+        
+            .numberOfPeopleContainer,
+            .eventDateContainer{
+                border-style: none;
+                border-top: 4px solid @highlight-color-primary;
+                border-bottom: 4px solid @highlight-color-primary;
+            }
+        
+            .numberOfPeopleContainer{
+                border-radius: @border-radius 0 0 @border-radius;
+                border-left: 4px solid @highlight-color-primary;
+            }
+
+            #checkEvent{
+                border-radius: 0 @border-radius @border-radius 0;
+                height: initial;
+            }
+        }
+    }
+}
+
 @media only screen and (min-width: 900px) {
     .meetingOverview{
         width: 60%;
 
         .meetingRooms,
         .meetingRequest{
+            width: 70%;
+        }
+    }
+
+    #request{
+        width: 60%;
+
+        .requestContainer{
             width: 70%;
         }
     }
@@ -64,6 +185,16 @@
         .meetingRooms,
         .meetingRequest{
             width: 40%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #request{
+        width: 50%;
+
+        .requestContainer{
+            width: 60%;
         }
     }
 }

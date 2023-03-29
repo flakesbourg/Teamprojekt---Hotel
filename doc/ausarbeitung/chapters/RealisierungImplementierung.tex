@@ -1,0 +1,33 @@
+\chapter{Realisierung}
+\section{Buchung}
+
+
+
+\chapter{Implementierung}
+
+\section{Buchung}
+Serverseitig wird eine API erstellt, die die clientseitige Kommunikation mit dem Server ermöglicht. Dafür wird ein express-Router mit verschiedenen Routen benötigt, die unter anderem das Erstellen, Löschen, Verändern und Abfragen von Buchungen abwickeln. Ein solcher Router wird mit express-Methode \glqq express.Router()\grqq \thinspace erstellt. Für jede Route wird es außerdem von Nöten sein, Zugriff auf die MongoDB-Datenbank zu besitzen. Mithilfe des MongoDB-Moduls wird dafür ein \glqq MongoClient\grqq \thinspace erzeugt, der die Adresse der MongoDB-Datenbank übergeben bekommt.
+
+\subsection{Erstellen einer Buchung}
+Für die Erstellung einer Buchung wird dem Router eine Route hinzugefügt, die auf einen HTTP-POST mit dem Pfad \glqq /order \grqq \thinspace reagiert. Innerhalb der Funktion die die Anfrage behandelt werden zu aller erst alle für die Buchung benötigten Informationen aus dem Request-Objekt in Konstanten gespeichert. Zu den benötigten Informationen gehören: Vorname, Nachname, E-Mail-Adresse, Telefonnummer, Wohnort (mit Ort, Straße, Hausnummer und PLZ), Ankunftsdatum, Abreisedatum und die Art von Zimmern die gebucht werden sollen. Anschließend wird geprüft ob die Konstanten gültig sind. Sollte eine nicht zulässig sein wird eine HTTP-Antwort mit dem Code 400 an den Client gesendet. Bestehen jedoch alle Konstanten die Prüfung, wird mit der Verbindung des MongoClients fortgeführt. Der Aufruf der \glqq connect\grqq- und daraufhin der \glqq db\grqq-Methode (mit dem Namen der gesuchten Datenbank) des bereits erstellten MongoClients, liefert ein Datenbank-Objekt mit dem nun einzelne Collections abgerufen werden können. 
+\\
+\\
+Um einen neuen Nutzer anzulegen muss ein Collection-Objekt zur Anpassung der Collection die alle Nutzer enthält, mithilfe der \glqq collection\grqq -Methode des Datenbank-Objekts, erzeugt werden. Das Collection-Objekt erlaubt es mit der Methode \glqq insertOne(elemToInsert)\grqq \thinspace den neuen Nutzer mit allen dazugehörigen Informationen aus den gespeicherten Konstanten (Vorname, Nachname, Adresse, E-Mail, Telefonnummer) in die Collection einzufügen.
+\\
+\\
+Im weiteren Verlauf werden die Collection mit allen Buchungen und die Collection mit allen Zimmern benötigt. Werden auf beiden Collections jeweils die Methoden \glqq find().toArray()\grqq \thinspace ohne Parameter aufgerufen, können alle Buchungen und Zimmer als Feld in jeweiligen Variablen abgelegt werden. Mithilfe des Algorithmus in \ref{alg:one} werden alle zu der angegebenen Ankunfts- und Abreisezeit verfügbaren Zimmer geliefert. Sind genug Zimmer mit den vom Client angegebenen Zimmertypen nicht vergeben werden für jeden zu buchenden Raum eine neue Buchung in die Buchungs-Collection eingefügt. Dabei besteht jede Buchung aus der ID des neuen Nutzers, der ID des verfügbaren Raums, des Ankunfts- und Abreisedatums.
+\\
+\\
+Zuletzt wird per nodemailer eine Mail an die E-Mail-Adresse des Clients gesendet. Diese enthält die ID des angelegten Nutzers, welche später zu Änderung oder Stornierung der Buchung verwendet werden kann. Als Antwort erhält der Client eine HTTP-Antwort mit dem Status-Code 200 insofern keine Komplikationen auftreten.
+
+\subsection{Ändern einer Buchung}
+Um einem Nutzer zu ermöglichen die Daten einer bereits getätigten Buchung zu ändern, wird eine Route hinzugefügt, die auf einen HTTP-POST mit dem Pfad \glqq /order/dates\grqq \thinspace reagiert. Dafür müssen im ersten Schritt die Variablen mit den Werten aus dem HTTP-Body initialisiert und anschließend auf Gültigkeit überprüft werden. Die Werte bestehen aus der ID des Nutzers, das neue Ankunfts- und Abreisedatum. Sollte einer der Werte ungültig sein, wird eine HTTP-Antwort mit dem Status-Code 400 an den Client versendet. Sind sie jedoch gültig verbindet sich der MongoClient mit der Datenbank und fordert alle Buchungen an. Anschließend werden mithilfe der find-Methode einerseits alle Buchungen die mit der ID des Nutzers übereinstimmen und andererseits alle anderen Buchungen, in zwei verschiedenen Konstanten gespeichert. Aus den Raum-IDs der Buchungen des Nutzers werden alle Räume aus der Raum-Collection die diese IDs besitzen, in einem Feld gesammelt. Dadurch ist es möglich die in der Buchung gebuchten Zimmertypen in Variablen zu speichern, damit bei der Änderung der Daten auch wieder dieselben Zimmertypen gewählt werden. Wie schon in Kapitel 6.1.1 erklärt müssen auch hier alle Zimmer die während des neuen Ankunftsdatum bis zum neuen Abreisedatum verfügbar sind, ermittelt werden.
+\\
+\\
+Sollte es nicht genügend Zimmer mit denselben Zimmertypen wie in der ursprünglichen Buchung geben, die während der neuen Daten verfügbar sind wird die bestehende Buchung nicht geändert und eine HTTP-Antwort mit dem Status-Code 400 an den Client gesendet. Sollte es jedoch genügend Zimmer geben wird die bisherigen Buchungen aus der \glqq reservation\grqq-Collection mithilfe der \glqq deleteMany\grqq-Methode gelöscht und anschließend neue Buchungen der gleichen Zimmertypen zu anderen Zeiten in diese Collection eingefügt. Ist der Ablauf problemlos wird der Status-Code 200 an den Client gesendet.
+
+\subsection{Anfragen einer Buchung}
+
+\subsection{Löschen einer Buchung}
+
+\section{Dreidimensionale Zimmer}

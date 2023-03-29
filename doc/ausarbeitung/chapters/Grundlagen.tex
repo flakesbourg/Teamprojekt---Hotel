@@ -1,0 +1,64 @@
+\chapter{Grundlagen}
+
+\section{HTML, CSS, JS}
+\subsection{HTML}
+HTML-Dokumente bilden das Grundgerüst einer Webanwendung und sind von daher essenziell. Ein solches Dokument besteht aus einzelnen, oft schon vorgefertigten Elementen die ineinander geschachtelt werden können. Diese können anschließend durch referenzierte \glqq Stylesheets\grqq \thinspace(im Folgenden anhand von Less) in ihrem Aussehen verändert oder durch JavaScript mit weiteren Funktionalitäten ausgestattet werden.
+
+\subsection{Less}
+In dieser Anwendung wird die \glqq Stylesheet-Sprache\grqq \thinspace Less verwendet, um die verschiedenen HTML Elemente zu gestalten. Innerhalb des Less-Codes kann normaler CSS-Code verwendet werden, bietet jedoch einige Vorteile im Vergleich zu dieser herkömmlichen Stylesheet-Sprache wie zum Beispiel Variablen, Funktionen und Verschachtelung. Für die endgültige Nutzung dieser Sprache wird eine Kompilierung des Codes zu CSS-Code benötigt. Less bietet außerdem die Möglichkeit den Code auf mehrere Dateien aufzuteilen und diese durch die Kompilierung zu einer CSS-Datei zu bündeln.
+
+\subsection{JavaScript}
+Die Programmiersprache JavaScript mit ihren etlichen verfügbaren Modulen kann dafür verwendet werden Webanwendungen dynamisch zu gestalten. Zentraler Bestandteil dafür ist die \glqq DOM-Manipulation\grqq , durch die dynamisch Elemente in einem Webdokument verändert, hinzugefügt und entfernt werden können. Außerdem kann mithilfe von JavaScript eine HTTP-Anfrage erstellt, versendet und auf diese reagiert werden um mit einer serverseitigen Anwendung kommunizieren zu können. Insbesondere in dieser Anwendung wird von dieser Möglichkeit Gebrauch gemacht indem \glqq XMLHttpRequest\grqq-Objekte mit allen dazugehörigen Informationen initialisiert werden. Innerhalb dieser Objekte kann angegeben werden wie auf eine Antwort reagiert werden soll. Eine solche Initialisierung kann wie folgt aussehen:
+
+\begin{lstlisting}{XMLHttpRequest}
+	const request = new XMLHttpRequest();
+	request.addEventListener('load', () => {
+		console.log(request.response);
+	});
+
+    request.open('POST', '/order');
+    request.setRequestHeader('Accept', 'application/json');
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.responseType = 'json';
+    request.send(data);
+\end{lstlisting}
+
+
+\subsubsection{Three.js}
+Werden dreidimensionale Darstellungen von Objekten oder Räumen benötigt, kann das Three.js Modul verwendet werden.
+Zu jedem Three.js-Projekt gehören folgende drei Bestandteile:
+\begin{enumerate}
+	\item scene (engl. für Szene)
+	\item camera (engl. für Kamera)
+	\item renderer (engl. für Renderer)
+\end{enumerate}
+Alle Objekte die gerendert werden sollen müssen sich in einer Scene befinden. Das Kamera-Objekt ermöglicht, die mithilfe von Three.js erstellten Szenen, zu visualisieren. Es existieren verschiedene Arten von Kamera-Objekten wie z.B. die perspektivische Kamera, die sich wie das menschliche Auge verhält, also näher stehende Objekte größer erscheinen lässt, und die orthografische Kamera, die die Größe der Objekte nicht an die Entfernung anpasst. Der Renderer als Hauptkomponente von Three.js bekommt eine erstellte Szene und Kamera übergeben und erzeugt so die finale dreidimensionale Darstellung des gewünschten Objekts.
+\\
+\\
+Um eine solche Darstellung möglichst realistisch wirken zu lassen müssen geeignete Bilder im \glqq .hdr\grqq -Format ausgewählt werden. Damit Kandidaten dieses Formats verwendet werden können wird ein zusätzliches Modul mit dem Namen \glqq RGBELoader\grqq benönigt. 
+\\
+\\
+Mit den sogenannten \glqq Orbit Controls\grqq \thinspace aus dem Three.js-Modul können Nutzer die Ausrichtung der Kamera in der gerenderten Szene per Mausbewegung anpassen und so beispielsweise dreidimensionale Räume erkunden.
+
+\section{Node.js}
+Die serverseitige Grundlage des Systems bildet die Laufzeitumgebung Node.js. Mit dieser ist es möglich JavaScript Programme abseits eines Browsers ausführen zu können. Mithilfe von \glqq npm\grqq, dem Paketmanager von Node.js, werden außerdem externe Pakete bzw. Module für bestimmte Funktionalitäten verwendet um die Implementierung zu vereinfachen.
+
+\subsection{Express}
+Das Express-Framework ermöglicht eine unkomplizierte Erstellung einer Webanwendung. So wird beispielsweise die Verarbeitung von HTTP-Anfragen mithilfe von spezifischen Methoden deutlich vereinfacht und macht das Erstellen einer API besonders effizient. Innerhalb der Buchungssoftware sorgt Express für die Bereitstellung eines Servers, der alle clientseitigen Dateien zur Verfügung stellt und auf HTTP-Anfragen zur Erzeugung oder zum Abrufen von Buchungen, reagiert. Besonders wichtig ist das Konzept der Routen. Das Definieren von Routen bestimmt wie auf eine Client-Anfrage an eine bestimmte URI des Servers und eine spezifische HTTP-Methode, geantwortet wird. Die Zuweisung einer Route kann wie folgt aussehen: 
+\begin{lstlisting}{Router}
+	app.METHOD(PATH, HANDLER);
+\end{lstlisting}
+In dem Beispiel steht app exemplarisch für ein express-Objekt, METHOD für eine HTTP-Methode, PATH für den Serverpfad und HANDLER für die Funktion die ausgeführt wird wenn eine Client-Anfrage existiert, die mit der Route übereinstimmt. Die Funktion die als HANDLER angegeben wird hat außerdem Zugriff auf ein HTTP-Request und ein HTTP-Response Objekt. Über das Request-Objekt kann auf Informationen der HTTP-Anfrage zugegriffen und mit dem Response-Objekt auf die Anfrage geantwortet werden.
+
+
+\subsection{Nodemailer}
+Nodemailer ist ein \glqq npm\grqq-Paket, das dafür verwendet wird E-Mails mit Node.js zu versenden. Durch Angabe der Adresse von der die E-Mail verschickt werden soll und verschiedenen Optionen wie z.B. dem Betreff wird das Senden vereinfacht. Um eine E-Mail zu versenden muss im ersten Schritt ein \glqq Transporter\grqq zusammen mit dem verwendeten Mail Dienst und den Anmeldeinformationen der zu sendenen E-Mail Adresse, erzeugt werden. Anschließend werden die Mail-Optionen initialisiert und über die Methode \glqq sendMail\grqq des Transportes, die E-Mail versandt.
+
+\subsection{Formidable}
+Das Node.js-Modul Formidable dient zur serverseitigen Verarbeitung von Formulardaten, insbesondere von Formularen die hochgeladene Dateien beinhalten. Da das Hochladen von Dateien durch einen Server behandelt werden muss bieten sich Module wie Formildable besonders an. So können die hochgeladenen Dateien in das Dateisystem des Servers eingefügt und verändert werden. Es werden viele Einstellungsmöglichkeiten geboten. So kann z.B. die maximale Größe einer hochgeladenen Datei festgelegt werden. Außerdem wird es dadurch möglich diese Dateien beispielsweise an eine E-Mail anzuhängen.
+
+\section{MongoDB}
+Unter den dokumentenorientierten NoSQL-Datenbanken ist MongoDB die meist verwendete. Die wichtigsten Bestandteile einer MongoDB Datenbank sind Dokumente und Collections. Dokumente sind Datenstrukturen die sich aus einem oder mehreren Paaren, bestehend aus Feldern und dazugehörigen Werten, zusammenfügen. In ihrem Aufbau sind diese Dokumente identisch mit JSON Objekten. Collections hingegen sind Sammlungen von verschiedenen Dokumenten und sind vergleichbar mit Tabellen aus relationalen Datenbanken.
+\\
+\\
+Damit eine Node.js-Anwendung mit einer MongoDB kommunizieren kann wird beispielsweise das \glqq npm\grqq-Paket \glqq mongodb\grqq benötigt. Hier können dann auf den einzelnen Collections, Methoden angwendet werden. Die wichtigsten Methoden für das zu erstellende System sind \glqq find\grqq , \glqq insertOne\grqq , \glqq deleteOne\grqq und \glqq deleteMany\grqq. Mithilfe von find werden alle Dokumente einer Collection geliefert, auf die ein in der Methode spezifiziertes Kriterium zutrifft. InsertOne ermöglicht es ein neues Dokument in eine Collection hinzuzufügen und deleteOne bzw. deleteMany ermöglicht das Löschen von Dokumenten aus einer Collection.

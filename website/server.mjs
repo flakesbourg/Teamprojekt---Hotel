@@ -6,6 +6,7 @@ import { orderRouter } from './server/src/Order.mjs';
 import { weahterRouter } from './server/src/Weather.mjs';
 import { careerRouter } from './server/src/Career.mjs';
 import { kontaktRouter } from './server/src/Kontakt.mjs';
+import { eventServer } from './server/src/Event.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 export const __dirname = path.dirname(__filename);
@@ -34,5 +35,6 @@ server.use(orderRouter);
 server.use(weahterRouter);
 server.use(careerRouter);
 server.use(kontaktRouter);
+server.use(eventServer);
 
 server.listen(port);
