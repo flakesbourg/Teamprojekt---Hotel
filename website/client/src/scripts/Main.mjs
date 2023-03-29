@@ -7,6 +7,7 @@ import { weather } from './Weather.mjs';
 import { myBooking } from './MyBooking.mjs';
 import { kontaktDaten } from './KontaktDaten.mjs';
 import { requestMeetingRoom } from './Meeting.mjs';
+import { basicThreeD, familyThreeD, premiumThreeD } from './threeD.mjs';
 
 $('header').load('header.html #header', function () {
   moveMenu();
@@ -93,4 +94,13 @@ if (document.title === 'Kontakt') {
 }
 if (document.title === 'Anfragen') {
   requestMeetingRoom();
+}
+if (document.title === 'Basic-ThreeD') {
+  basicThreeD();
+}
+if (document.title === 'Family-ThreeD') {
+  familyThreeD();
+}
+if (document.title === 'Premium-ThreeD') {
+  premiumThreeD();
 }
