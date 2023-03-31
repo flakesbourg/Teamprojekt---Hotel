@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.4)  29 MAR 2023 00:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.4)  31 MAR 2023 03:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -705,7 +705,7 @@ bibgerm.sty: babel.sty detected
 
 pdfTeX warning: pdflatex.exe (file ./images/logo-fb-informatik.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/logo-fb-informatik.pdf, id=119, 811.81792pt x 157.11497pt>
+<images/logo-fb-informatik.pdf, id=131, 811.81792pt x 157.11497pt>
 File: images/logo-fb-informatik.pdf Graphic file (type pdf)
 <use images/logo-fb-informatik.pdf>
 Package pdftex.def Info: images/logo-fb-informatik.pdf  used on input line 87.
@@ -713,7 +713,7 @@ Package pdftex.def Info: images/logo-fb-informatik.pdf  used on input line 87.
 [1
 
 {C:/Users/Alex/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/logo
--fb-informatik.pdf>] (chapters/Vorwort.tex
+-fb-informatik.pdf>] (chapters/Kurzfassung.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 (C:\Users\Alex\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -723,34 +723,31 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (C:\Users\Alex\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-(chapters/Kurzfassung.tex [2
+)
+[2
 
 
 
 
-] [3
+]) [3
 
 
-]) [4
-
-
-] (vorlage-projekt.toc [5
+] (vorlage-projekt.toc [4
 
 
 ])
 \tf@toc=\write5
 \openout5 = `vorlage-projekt.toc'.
 
- [6]
-(vorlage-projekt.lof)
+ [5] (vorlage-projekt.lof)
 \tf@lof=\write6
 \openout6 = `vorlage-projekt.lof'.
 
- [7
+ [6
 
 
-] (chapters/EinleitungProblemstellung.tex
+]
+(chapters/EinleitungProblemstellung.tex
 Kapitel 1.
 ) (chapters/VerwandteArbeiten.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -795,17 +792,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--1
 
 [5] [6]
 Kapitel 4.
-<images/Architektur.png, id=243, 695.59875pt x 161.85469pt>
+<images/Architektur.png, id=268, 695.59875pt x 161.85469pt>
 File: images/Architektur.png Graphic file (type png)
 <use images/Architektur.png>
 Package pdftex.def Info: images/Architektur.png  used on input line 4.
 (pdftex.def)             Requested size: 418.25368pt x 97.321pt.
-<images/Sitemap.png, id=245, 1181.91562pt x 669.2503pt>
+<images/Sitemap.png, id=270, 1181.91562pt x 669.2503pt>
 File: images/Sitemap.png Graphic file (type png)
 <use images/Sitemap.png>
 Package pdftex.def Info: images/Sitemap.png  used on input line 9.
 (pdftex.def)             Requested size: 418.25368pt x 236.82472pt.
-<images/Datenbank.png, id=246, 914.66719pt x 630.85687pt>
+<images/Datenbank.png, id=271, 914.66719pt x 630.85687pt>
 File: images/Datenbank.png Graphic file (type png)
 <use images/Datenbank.png>
 Package pdftex.def Info: images/Datenbank.png  used on input line 14.
@@ -822,29 +819,18 @@ Kapitel 5.
 ]
 Kapitel 6.
 
-Overfull \hbox (9.01135pt too wide) in paragraph at lines 9--10
-\OT1/cmr/m/n/12 Ser-ver erm[]oglicht. Daf[]ur wird ein express-Router mit ver-s
-chie-de-nen Rou-ten ben[]otigt,
+Overfull \hbox (27.4236pt too wide) in paragraph at lines 11--18
+\OT1/cmr/m/n/12 In der We-ban-wen-dung wird ei-nem Nut-zer un-ter dem Punkt []M
+ei-ne Bu-chung\erm[]oglicht
  []
 
 
-Overfull \hbox (4.16412pt too wide) in paragraph at lines 9--10
-\OT1/cmr/m/n/12 ab-wi-ckeln. Ein sol-cher Rou-ter wird mit express-Methode []ex
--press.Router()\erstellt.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--22
+Underfull \hbox (badness 10000) in paragraph at lines 11--18
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--22
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--22
+Underfull \hbox (badness 10000) in paragraph at lines 11--18
 
  []
 
@@ -852,23 +838,110 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--22
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 24--28
+Overfull \hbox (9.01135pt too wide) in paragraph at lines 20--21
+\OT1/cmr/m/n/12 Ser-ver erm[]oglicht. Daf[]ur wird ein express-Router mit ver-s
+chie-de-nen Rou-ten ben[]otigt,
+ []
+
+
+Overfull \hbox (4.16412pt too wide) in paragraph at lines 20--21
+\OT1/cmr/m/n/12 ab-wi-ckeln. Ein sol-cher Rou-ter wird mit express-Methode []ex
+-press.Router()\erstellt.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--33
 
  []
 
-) (chapters/Beispiel.tex [11] [12]
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--33
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 35--39
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 58--62
+
+ []
+
+[13] [14]) (chapters/Beispiel.tex
+Overfull \hbox (6.07803pt too wide) in paragraph at lines 73--1
+\OT1/cmr/m/n/12 stanz der Or-bit-Con-trols: or-bit = new Or-bit-Con-trols(camer
+a, ren-de-rer.domElement),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--1
+
+ []
+
+[15]
 Kapitel 7.
-) (chapters/Anwendungsszenarien.tex [13
+<images/Beispiel/Schritt1.png, id=334, 1498.398pt x 751.00575pt>
+File: images/Beispiel/Schritt1.png Graphic file (type png)
+<use images/Beispiel/Schritt1.png>
+Package pdftex.def Info: images/Beispiel/Schritt1.png  used on input line 4.
+(pdftex.def)             Requested size: 418.25368pt x 209.62698pt.
+<images/Beispiel/Schritt2.png, id=336, 1498.398pt x 754.017pt>
+File: images/Beispiel/Schritt2.png Graphic file (type png)
+<use images/Beispiel/Schritt2.png>
+Package pdftex.def Info: images/Beispiel/Schritt2.png  used on input line 11.
+(pdftex.def)             Requested size: 418.25368pt x 210.46751pt.
+[16
 
 
-]
+ <./images/Beispiel/Schritt1.png>]
+<images/Beispiel/Schritt3.png, id=343, 1500.807pt x 732.336pt>
+File: images/Beispiel/Schritt3.png Graphic file (type png)
+<use images/Beispiel/Schritt3.png>
+Package pdftex.def Info: images/Beispiel/Schritt3.png  used on input line 17.
+(pdftex.def)             Requested size: 418.25368pt x 204.09167pt.
+<images/Beispiel/Schritt4.png, id=345, 1506.8295pt x 747.39224pt>
+File: images/Beispiel/Schritt4.png Graphic file (type png)
+<use images/Beispiel/Schritt4.png>
+Package pdftex.def Info: images/Beispiel/Schritt4.png  used on input line 24.
+(pdftex.def)             Requested size: 418.25368pt x 207.45511pt.
+ [17 <./images/Beispiel/Schritt2.png> <./images/Beispiel/Schritt3.png>]
+<images/Beispiel/Schritt5.png, id=353, 1497.79575pt x 747.9945pt>
+File: images/Beispiel/Schritt5.png Graphic file (type png)
+<use images/Beispiel/Schritt5.png>
+Package pdftex.def Info: images/Beispiel/Schritt5.png  used on input line 31.
+(pdftex.def)             Requested size: 418.25368pt x 208.86635pt.
+ [18 <./images/Beispiel/Schritt4.png> <./images/Beispiel/Schritt5.png>]
+<images/Beispiel/Schritt6.png, id=361, 1500.807pt x 745.5855pt>
+File: images/Beispiel/Schritt6.png Graphic file (type png)
+<use images/Beispiel/Schritt6.png>
+Package pdftex.def Info: images/Beispiel/Schritt6.png  used on input line 38.
+(pdftex.def)             Requested size: 418.25368pt x 207.78412pt.
+<images/Beispiel/Schritt7.png, id=363, 1503.216pt x 746.79pt>
+File: images/Beispiel/Schritt7.png Graphic file (type png)
+<use images/Beispiel/Schritt7.png>
+Package pdftex.def Info: images/Beispiel/Schritt7.png  used on input line 45.
+(pdftex.def)             Requested size: 418.25368pt x 207.78934pt.
+ [19 <./images/Beispiel/Schritt6.png> <./images/Beispiel/Schritt7.png>]
+<images/Beispiel/Schritt8.png, id=372, 1506.8295pt x 732.93825pt>
+File: images/Beispiel/Schritt8.png Graphic file (type png)
+<use images/Beispiel/Schritt8.png>
+Package pdftex.def Info: images/Beispiel/Schritt8.png  used on input line 52.
+(pdftex.def)             Requested size: 418.25368pt x 203.4431pt.
+) (chapters/Anwendungsszenarien.tex [20 <./images/Beispiel/Schritt8.png>]
 Kapitel 8.
-) (chapters/ZusammenfassungAusblick.tex [14
+) (chapters/ZusammenfassungAusblick.tex [21
 
 
 ]
 Kapitel 9.
-) [15
+) [22
 
 
 ] (vorlage-projekt.bbl
@@ -879,7 +952,7 @@ tt/m/n/12 https : / / de . wikipedia . org / wiki /
 
 )
 No file vorlage-projekt.ind.
-[16
+[23
 
 
 
@@ -897,7 +970,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-) [17
+) [24
 
 
 
@@ -906,16 +979,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `vorlage-projekt.out' has not changed.
-(rerunfilecheck)             Checksum: FED917A4630C77D0199A35FE1AA3B871;3578.
+(rerunfilecheck)             Checksum: CA64D460F5362B514C32E45D8EC9691E;3994.
  ) 
 Here is how much of TeX's memory you used:
- 16290 strings out of 478582
- 265006 string characters out of 2844817
- 597577 words of memory out of 3000000
- 34113 multiletter control sequences out of 15000+600000
+ 16382 strings out of 478582
+ 266959 string characters out of 2844817
+ 598929 words of memory out of 3000000
+ 34170 multiletter control sequences out of 15000+600000
  477043 words of font info for 57 fonts, out of 8000000 for 9000
  1146 hyphenation exceptions out of 8191
- 60i,15n,63p,1413b,1804s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 60i,15n,63p,1742b,1804s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Alex\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 200.pk><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -931,9 +1004,9 @@ sers/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.p
 fb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmtt8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb>
-Output written on vorlage-projekt.pdf (24 pages, 757209 bytes).
+Output written on vorlage-projekt.pdf (30 pages, 9140069 bytes).
 PDF statistics:
- 391 PDF objects out of 1000 (max. 8388607)
- 90 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 489 PDF objects out of 1000 (max. 8388607)
+ 119 named destinations out of 1000 (max. 500000)
+ 317 words of extra memory for PDF output out of 10000 (max. 10000000)
 
