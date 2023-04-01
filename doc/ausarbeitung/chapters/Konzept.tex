@@ -1,20 +1,26 @@
 \chapter{Konzept}
-
+Das folgenden Bild beschreibt den groben Aufbau der Anwendung und die Technologien die auf den verschiedenen Ebenen verwendet wird.
 \begin{figure}
-	\includegraphics[width=\textwidth]{images/Architektur.png}
+	\includegraphics[width=0.8\textwidth]{images/Architektur.png}
+	\centering
 	\caption{Grobe Architektur des Systems}
 \end{figure}
 
+Die Sitemap dient dazu die Navigation durch die  Anwendung und den Zusammenhang der einzelnen Unterseiten darzustellen.
 \begin{figure}
-	\includegraphics[width=\textwidth]{images/Sitemap.png}
+	\includegraphics[width=0.8\textwidth]{images/Sitemap.png}
+	\centering
 	\caption{Sitemap}
 \end{figure}
+\newpage
+Diese Abbildung stellt den Aufbau der Datenbank dar, wobei jedes Rechteck eine Collection abbildet mit Dokumenten die jeweils die Ovale als Attribute besitzt.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{images/Datenbank.png}
 	\caption{Datenbankentwurf}
 \end{figure}
 
+Dieser Algorithmus spielt in der finalen Implementierung eine wichtige Rolle, da in vielen Fällen die verfügbaren Zimmer bestimmt werden müssen.
 \begin{algorithm}
 	\caption{Algorithmus um alle verfügbaren Räume zu erhalten}\label{alg:one}
 	\KwData{rooms = alle Räume,

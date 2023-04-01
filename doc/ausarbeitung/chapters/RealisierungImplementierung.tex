@@ -1,8 +1,3 @@
-\chapter{Realisierung}
-\section{Buchung}
-
-
-
 \chapter{Implementierung}
 \section{Buchungsdialog}
 Dem Client soll es innerhalb der Anwendung ermöglicht werden über einen \glqq Buchungsdialog\grqq \thickspace eine Buchung abzuwickeln. Dieser Dialog teilt sich in mehrere Schritte auf. Im ersten Schritt muss der Nutzer ein Formular, bestehend aus Ankunfts-, Abreisedatum, Anzahl der Erwachsenen, Anzahl der Kinder und die Anzahl der Räume, ausfüllen. Will der Nutzer nun mit dem zweiten Schritt fortführen werden zuerst die Eingaben aus dem ersten Schritt auf Gültigkeit geprüft. Gültigkeit heißt in diesem Fall dass beispielsweise das Ankunftsdatum nicht in der Vergangenheit oder vor dem Abreisedatum liegen darf. Sind die Eingaben gültig wird eine HTTP-Anfrage an den Server geschickt mit dem Ziel alle zu der angegeben Aufenthaltszeit verfügbaren Zimmer als HTTP-Antwort zu erhalten. Im zweiten Schritt des Dialogs kann der Nutzer aus allen verfügbaren Zimmern die passenden für seinen Aufenthalt wählen. Bevor mit dem dritten Schritt fortgeführt wird, muss geprüft werden das genau so viele Zimmer, wie im ersten Schritt angegeben, ausgewählt wurden. Ist dies der Fall wird im nächsten Schritt mit einem Formular für alle persönlichen Daten des Nutzers fortgesetzt. Werden alle Felder des Formulars ordnungsgemäß ausgefüllt kann mit dem vierten und letzten Schritt fortgeführt werden. In diesem wird dem Nutzer eine Übersicht der angegebenen Daten bzw. der Buchung angezeigt und bietet dem Nutzer über ein Textfeld die Möglichkeit Extrawünsche an das Hotel zu äußern. Will der Nutzer die Buchung abschließen wird eine HTTP-POST-Anfrage an den Server, mit allen wichtigen Daten zu Erstellung der Buchung, versendet.

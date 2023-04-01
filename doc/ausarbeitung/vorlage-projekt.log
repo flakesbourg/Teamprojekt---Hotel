@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.4)  31 MAR 2023 03:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.4)  1 APR 2023 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -705,7 +705,7 @@ bibgerm.sty: babel.sty detected
 
 pdfTeX warning: pdflatex.exe (file ./images/logo-fb-informatik.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/logo-fb-informatik.pdf, id=131, 811.81792pt x 157.11497pt>
+<images/logo-fb-informatik.pdf, id=119, 811.81792pt x 157.11497pt>
 File: images/logo-fb-informatik.pdf Graphic file (type pdf)
 <use images/logo-fb-informatik.pdf>
 Package pdftex.def Info: images/logo-fb-informatik.pdf  used on input line 87.
@@ -749,30 +749,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 (chapters/EinleitungProblemstellung.tex
 Kapitel 1.
-) (chapters/VerwandteArbeiten.tex
+) (chapters/Grundlagen.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Verwandte Arbeiten} [1
+            {Grundlagen} [1
 
 
 
 
 ]
 Kapitel 2.
-
-LaTeX Warning: Reference `Bausteine' on page 2 undefined on input line 12.
-
-) (chapters/Grundlagen.tex [2
-
-
-]
-Kapitel 3.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 13.
-[3
+[2
 
 
 ]
@@ -785,163 +777,159 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--42
 
  []
 
-[4]) (chapters/Konzept.tex
+[3]) (chapters/Konzept.tex
 Underfull \hbox (badness 10000) in paragraph at lines 61--1
 
  []
 
-[5] [6]
-Kapitel 4.
-<images/Architektur.png, id=268, 695.59875pt x 161.85469pt>
+[4] [5]
+Kapitel 3.
+<images/Architektur.png, id=248, 695.59875pt x 161.85469pt>
 File: images/Architektur.png Graphic file (type png)
 <use images/Architektur.png>
 Package pdftex.def Info: images/Architektur.png  used on input line 4.
-(pdftex.def)             Requested size: 418.25368pt x 97.321pt.
-<images/Sitemap.png, id=270, 1181.91562pt x 669.2503pt>
+(pdftex.def)             Requested size: 334.60422pt x 77.8573pt.
+<images/Sitemap.png, id=250, 1181.91562pt x 669.2503pt>
 File: images/Sitemap.png Graphic file (type png)
 <use images/Sitemap.png>
-Package pdftex.def Info: images/Sitemap.png  used on input line 9.
-(pdftex.def)             Requested size: 418.25368pt x 236.82472pt.
-<images/Datenbank.png, id=271, 914.66719pt x 630.85687pt>
+Package pdftex.def Info: images/Sitemap.png  used on input line 11.
+(pdftex.def)             Requested size: 334.60422pt x 189.46182pt.
+[6
+
+
+ <./images/Architektur.png> <./images/Sitemap.png>]
+<images/Datenbank.png, id=257, 914.66719pt x 630.85687pt>
 File: images/Datenbank.png Graphic file (type png)
 <use images/Datenbank.png>
-Package pdftex.def Info: images/Datenbank.png  used on input line 14.
+Package pdftex.def Info: images/Datenbank.png  used on input line 19.
 (pdftex.def)             Requested size: 418.25368pt x 288.47461pt.
-) (chapters/RealisierungImplementierung.tex [7
+)
+(chapters/RealisierungImplementierung.tex [7 <./images/Datenbank.png>]
+Kapitel 4.
 
-
- <./images/Architektur.png> <./images/Sitemap.png>] [8 <./images/Datenbank.png>
-]
-Kapitel 5.
-[9
-
-
-]
-Kapitel 6.
-
-Overfull \hbox (27.4236pt too wide) in paragraph at lines 11--18
+Overfull \hbox (27.4236pt too wide) in paragraph at lines 6--13
 \OT1/cmr/m/n/12 In der We-ban-wen-dung wird ei-nem Nut-zer un-ter dem Punkt []M
 ei-ne Bu-chung\erm[]oglicht
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--18
+Underfull \hbox (badness 10000) in paragraph at lines 6--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--18
+Underfull \hbox (badness 10000) in paragraph at lines 6--13
 
  []
 
-[10
+[8
 
 
 ]
-Overfull \hbox (9.01135pt too wide) in paragraph at lines 20--21
+Overfull \hbox (9.01135pt too wide) in paragraph at lines 15--16
 \OT1/cmr/m/n/12 Ser-ver erm[]oglicht. Daf[]ur wird ein express-Router mit ver-s
 chie-de-nen Rou-ten ben[]otigt,
  []
 
 
-Overfull \hbox (4.16412pt too wide) in paragraph at lines 20--21
+Overfull \hbox (4.16412pt too wide) in paragraph at lines 15--16
 \OT1/cmr/m/n/12 ab-wi-ckeln. Ein sol-cher Rou-ter wird mit express-Methode []ex
 -press.Router()\erstellt.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--33
+Underfull \hbox (badness 10000) in paragraph at lines 18--28
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--33
+Underfull \hbox (badness 10000) in paragraph at lines 18--28
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--33
+Underfull \hbox (badness 10000) in paragraph at lines 18--28
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 35--39
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 30--34
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 58--62
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 53--57
 
  []
 
-[13] [14]) (chapters/Beispiel.tex
-Overfull \hbox (6.07803pt too wide) in paragraph at lines 73--1
+[11] [12]) (chapters/Beispiel.tex
+Overfull \hbox (6.07803pt too wide) in paragraph at lines 68--1
 \OT1/cmr/m/n/12 stanz der Or-bit-Con-trols: or-bit = new Or-bit-Con-trols(camer
 a, ren-de-rer.domElement),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--1
+Underfull \hbox (badness 10000) in paragraph at lines 68--1
 
  []
 
-[15]
-Kapitel 7.
-<images/Beispiel/Schritt1.png, id=334, 1498.398pt x 751.00575pt>
+[13]
+Kapitel 5.
+<images/Beispiel/Schritt1.png, id=310, 1498.398pt x 751.00575pt>
 File: images/Beispiel/Schritt1.png Graphic file (type png)
 <use images/Beispiel/Schritt1.png>
 Package pdftex.def Info: images/Beispiel/Schritt1.png  used on input line 4.
 (pdftex.def)             Requested size: 418.25368pt x 209.62698pt.
-<images/Beispiel/Schritt2.png, id=336, 1498.398pt x 754.017pt>
+<images/Beispiel/Schritt2.png, id=312, 1498.398pt x 754.017pt>
 File: images/Beispiel/Schritt2.png Graphic file (type png)
 <use images/Beispiel/Schritt2.png>
 Package pdftex.def Info: images/Beispiel/Schritt2.png  used on input line 11.
 (pdftex.def)             Requested size: 418.25368pt x 210.46751pt.
-[16
+[14
 
 
  <./images/Beispiel/Schritt1.png>]
-<images/Beispiel/Schritt3.png, id=343, 1500.807pt x 732.336pt>
+<images/Beispiel/Schritt3.png, id=319, 1500.807pt x 732.336pt>
 File: images/Beispiel/Schritt3.png Graphic file (type png)
 <use images/Beispiel/Schritt3.png>
 Package pdftex.def Info: images/Beispiel/Schritt3.png  used on input line 17.
 (pdftex.def)             Requested size: 418.25368pt x 204.09167pt.
-<images/Beispiel/Schritt4.png, id=345, 1506.8295pt x 747.39224pt>
+<images/Beispiel/Schritt4.png, id=321, 1506.8295pt x 747.39224pt>
 File: images/Beispiel/Schritt4.png Graphic file (type png)
 <use images/Beispiel/Schritt4.png>
 Package pdftex.def Info: images/Beispiel/Schritt4.png  used on input line 24.
 (pdftex.def)             Requested size: 418.25368pt x 207.45511pt.
- [17 <./images/Beispiel/Schritt2.png> <./images/Beispiel/Schritt3.png>]
-<images/Beispiel/Schritt5.png, id=353, 1497.79575pt x 747.9945pt>
+ [15 <./images/Beispiel/Schritt2.png> <./images/Beispiel/Schritt3.png>]
+<images/Beispiel/Schritt5.png, id=329, 1497.79575pt x 747.9945pt>
 File: images/Beispiel/Schritt5.png Graphic file (type png)
 <use images/Beispiel/Schritt5.png>
 Package pdftex.def Info: images/Beispiel/Schritt5.png  used on input line 31.
 (pdftex.def)             Requested size: 418.25368pt x 208.86635pt.
- [18 <./images/Beispiel/Schritt4.png> <./images/Beispiel/Schritt5.png>]
-<images/Beispiel/Schritt6.png, id=361, 1500.807pt x 745.5855pt>
+ [16 <./images/Beispiel/Schritt4.png> <./images/Beispiel/Schritt5.png>]
+<images/Beispiel/Schritt6.png, id=337, 1500.807pt x 745.5855pt>
 File: images/Beispiel/Schritt6.png Graphic file (type png)
 <use images/Beispiel/Schritt6.png>
 Package pdftex.def Info: images/Beispiel/Schritt6.png  used on input line 38.
 (pdftex.def)             Requested size: 418.25368pt x 207.78412pt.
-<images/Beispiel/Schritt7.png, id=363, 1503.216pt x 746.79pt>
+<images/Beispiel/Schritt7.png, id=339, 1503.216pt x 746.79pt>
 File: images/Beispiel/Schritt7.png Graphic file (type png)
 <use images/Beispiel/Schritt7.png>
 Package pdftex.def Info: images/Beispiel/Schritt7.png  used on input line 45.
 (pdftex.def)             Requested size: 418.25368pt x 207.78934pt.
- [19 <./images/Beispiel/Schritt6.png> <./images/Beispiel/Schritt7.png>]
-<images/Beispiel/Schritt8.png, id=372, 1506.8295pt x 732.93825pt>
+ [17 <./images/Beispiel/Schritt6.png> <./images/Beispiel/Schritt7.png>]
+<images/Beispiel/Schritt8.png, id=347, 1506.8295pt x 732.93825pt>
 File: images/Beispiel/Schritt8.png Graphic file (type png)
 <use images/Beispiel/Schritt8.png>
 Package pdftex.def Info: images/Beispiel/Schritt8.png  used on input line 52.
 (pdftex.def)             Requested size: 418.25368pt x 203.4431pt.
-) (chapters/Anwendungsszenarien.tex [20 <./images/Beispiel/Schritt8.png>]
-Kapitel 8.
-) (chapters/ZusammenfassungAusblick.tex [21
+) (chapters/Anwendungsszenarien.tex [18 <./images/Beispiel/Schritt8.png>]
+Kapitel 6.
+) (chapters/ZusammenfassungAusblick.tex [19
 
 
 ]
-Kapitel 9.
-) [22
+Kapitel 7.
+) [20
 
 
 ] (vorlage-projekt.bbl
@@ -952,7 +940,7 @@ tt/m/n/12 https : / / de . wikipedia . org / wiki /
 
 )
 No file vorlage-projekt.ind.
-[23
+[21
 
 
 
@@ -970,43 +958,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-) [24
+) [22
 
 
 
 ] (vorlage-projekt.aux (chapters/Selbststaendigkeitserklaerung.aux))
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `vorlage-projekt.out' has not changed.
-(rerunfilecheck)             Checksum: CA64D460F5362B514C32E45D8EC9691E;3994.
+(rerunfilecheck)             Checksum: C2C1A5CE1E707F0DC0D5FA034DB90662;3663.
  ) 
 Here is how much of TeX's memory you used:
- 16382 strings out of 478582
- 266959 string characters out of 2844817
- 598929 words of memory out of 3000000
- 34170 multiletter control sequences out of 15000+600000
- 477043 words of font info for 57 fonts, out of 8000000 for 9000
+ 16364 strings out of 478582
+ 266561 string characters out of 2844817
+ 597929 words of memory out of 3000000
+ 34161 multiletter control sequences out of 15000+600000
+ 476706 words of font info for 56 fonts, out of 8000000 for 9000
  1146 hyphenation exceptions out of 8191
- 60i,15n,63p,1742b,1804s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Alex\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
-200.pk><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmcsc10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Alex/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ale
-x/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/U
-sers/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.p
-fb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmtt8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/symbols/msam10.pfb>
-Output written on vorlage-projekt.pdf (30 pages, 9140069 bytes).
+ 60i,16n,63p,1742b,1804s stack positions out of 10000i,1000n,20000p,200000b,80000s
+<C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmcsc10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmmi12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Alex/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/
+Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C
+:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8
+.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/s
+ymbols/msam10.pfb>
+Output written on vorlage-projekt.pdf (28 pages, 9135647 bytes).
 PDF statistics:
- 489 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
- 317 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 460 PDF objects out of 1000 (max. 8388607)
+ 114 named destinations out of 1000 (max. 500000)
+ 293 words of extra memory for PDF output out of 10000 (max. 10000000)
 
