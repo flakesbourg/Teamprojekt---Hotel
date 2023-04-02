@@ -29,4 +29,3 @@
 \contentsline {chapter}{\numberline {6}Anwendungsszenarien}{19}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Zusammenfassung und Ausblick}{20}{chapter.7}%
 \contentsline {chapter}{Literaturverzeichnis}{21}{chapter*.18}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{22}{appendix.A}%
