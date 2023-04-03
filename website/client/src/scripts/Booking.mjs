@@ -108,8 +108,11 @@ export function bookingDialog () {
       rooms = Number(params.get('rooms'));
     }
 
-    if (checkInputStepOne()) {
-      dialogForward.disabled = true;
+    if (rooms < 1) {
+      dialogBack.disabled = true;
+      loadStepOne();
+    } else if (checkInputStepOne()) {
+      dialogBack.disabled = true;
       loadStepTwo();
     } else {
       dialogBack.disabled = true;
@@ -132,8 +135,9 @@ export function bookingDialog () {
     arrivalDialog.value = arrival.toISOString().substring(0, 10);
     departureDialog.value = departure.toISOString().substring(0, 10);
 
+    const date = new Date();
     arrivalDialog.min = new Date().toISOString().split('T')[0];
-    departureDialog.min = new Date().toISOString().split('T')[0];
+    departureDialog.min = new Date(date.getDate() + 1).toISOString().split('T')[0];
 
     adultsDialog.value = adults;
     childrenDialog.value = children;
@@ -147,7 +151,7 @@ export function bookingDialog () {
       arrival = new Date(Date.now());
       departure = new Date(Date.now());
       return false;
-    } else if (arrival < Date.now() || arrival > departure) {
+    } else if (arrival < new Date((new Date()).toISOString().split('T')[0]) || arrival > departure) {
       departure = new Date(Date.now());
       arrival = new Date(Date.now());
       window.alert('Ankuft kann nicht vor der Abreise oder in der Vergangenheit liegen');
