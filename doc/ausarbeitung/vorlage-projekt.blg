@@ -4,49 +4,45 @@ The top-level auxiliary file: vorlage-projekt.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: geralpha.bst
 Reallocating 'name_of_file' (item size: 1) to 10 items.
-Reallocating 'name_of_file' (item size: 1) to 21 items.
-A level-1 auxiliary file: chapters/Glossar.aux
-Reallocating 'name_of_file' (item size: 1) to 43 items.
-A level-1 auxiliary file: chapters/Selbststaendigkeitserklaerung.aux
 Database file #1: literatur.bib
-You've used 8 entries,
+You've used 7 entries,
             2768 wiz_defined-function locations,
-            661 strings with 6343 characters,
-and the built_in function-call counts, 2616 in all, are:
-= -- 269
-> -- 102
-< -- 6
-+ -- 32
-- -- 32
-* -- 188
-:= -- 439
-add.period$ -- 17
-call.type$ -- 8
-change.case$ -- 37
-chr.to.int$ -- 8
-cite$ -- 8
-duplicate$ -- 121
-empty$ -- 199
-format.name$ -- 43
-if$ -- 554
-int.to.chr$ -- 1
+            625 strings with 5660 characters,
+and the built_in function-call counts, 1663 in all, are:
+= -- 175
+> -- 7
+< -- 0
++ -- 1
+- -- 0
+* -- 79
+:= -- 200
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 28
+chr.to.int$ -- 6
+cite$ -- 7
+duplicate$ -- 77
+empty$ -- 204
+format.name$ -- 0
+if$ -- 408
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 6
-newline$ -- 36
-num.names$ -- 21
-pop$ -- 49
+missing$ -- 0
+newline$ -- 38
+num.names$ -- 0
+pop$ -- 77
 preamble$ -- 1
-purify$ -- 53
+purify$ -- 42
 quote$ -- 0
-skip$ -- 98
+skip$ -- 68
 stack$ -- 0
-substring$ -- 71
-swap$ -- 23
-text.length$ -- 6
-text.prefix$ -- 5
+substring$ -- 49
+swap$ -- 14
+text.length$ -- 0
+text.prefix$ -- 7
 top$ -- 0
 type$ -- 56
 warning$ -- 0
-while$ -- 18
-width$ -- 11
-write$ -- 98
+while$ -- 0
+width$ -- 10
+write$ -- 79
