@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.4)  3 APR 2023 14:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.4)  3 APR 2023 17:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -872,9 +872,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--57
  []
 
 [11] [12]) (chapters/Beispiel.tex
-Overfull \hbox (6.07803pt too wide) in paragraph at lines 68--1
-\OT1/cmr/m/n/12 stanz der Or-bit-Con-trols: or-bit = new Or-bit-Con-trols(camer
-a, ren-de-rer.domElement),
+Overfull \hbox (16.84459pt too wide) in paragraph at lines 68--1
+\OT1/cmr/m/n/12 In-stanz der Or-bit-Con-trols: or-bit = new Or-bit-Con-trols(ca
+mera, ren-de-rer.domElement),
  []
 
 
@@ -989,7 +989,7 @@ ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData/Loca
 l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Alex/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/A
 lex/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on vorlage-projekt.pdf (27 pages, 9113300 bytes).
+Output written on vorlage-projekt.pdf (27 pages, 9113301 bytes).
 PDF statistics:
  454 PDF objects out of 1000 (max. 8388607)
  110 named destinations out of 1000 (max. 500000)
